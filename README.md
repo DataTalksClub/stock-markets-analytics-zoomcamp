@@ -1,1 +1,1 @@
-# stock-markets-analytics-zoomcamp
+# Stock Market Analytics Zoomcamp
