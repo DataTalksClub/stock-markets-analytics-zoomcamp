@@ -5,6 +5,7 @@
 </p>
 
 
+<b>TODO List before the course starts: </b>
 - Subscribe to [PythonInvest](https://pythoninvest.com/) to receive analytics and future courses announcements. 
 - Register in [DataTalks.Club's Slack](https://datatalks.club/slack.html)
 - Join the [`#course-stocks-analytics-zoomcamp`](https://datatalks-club.slack.com/archives/C06L1RTF10F) channel
@@ -14,13 +15,13 @@
 
 
 
-(Short) Syllabus (published on [PythonInvest website](https://pythoninvest.com/course))
+<b>(Short) Syllabus (published on [PythonInvest's website](https://pythoninvest.com/course)) </b>
 
-* [Module 1: Introduction and Data Sources](#module-1-data-sources)
-* [Module 2: Working with the Data (in Pandas)](#module-2-dataframe-analysis)
-* [Module 3: Analytical Modeling](#module-3-modeling)
-* [Module 4: Trading Strategy and Simulation](#module-4-trading-strategy-and-simulation)
-* [Module 5: Deployment and Automation](#module-5-deployment-and-automation)
+* [Module 1: Introduction and Data Sources](#Module-1-Introduction-and-Data-Sources)
+* [Module 2: Working with the Data (in Pandas)](#Module-2-Working-with-the-Data-(in-Pandas))
+* [Module 3: Analytical Modeling](#Module-3-Analytical-Modeling)
+* [Module 4: Trading Strategy and Simulation](#Module-4-Trading-Strategy-and-Simulation)
+* [Module 5: Deployment and Automation](#Module-5-Deployment-and-Automation)
 * [Project](#project)
 
 
@@ -129,7 +130,7 @@ Streamlining Processes from Prediction to Action:
 [More details](05-deployment-and-automation/)
 
 
-### [Project](projects)
+### [Project](project)
 
 Putting everything we learned to practice
 
