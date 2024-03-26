@@ -94,6 +94,7 @@ can take the course at your own pace
 * Regression techniques for understanding data relationships.
 * Binary classification to determine growth direction.
 * [Optional] Example of neural networks in analytical modelling.
+* Homework
 
 [More details](03-modeling/)
 
@@ -112,8 +113,8 @@ Moving Beyond Prediction into the realm of Trading Strategy and Simulation:
   * Vertical stocks covering and pairs trading.
   * Exploration of "Penny" stocks and dividend strategies.
   * [Maybe - Advanced] Basic options strategy.
-
 * Simulate the financial results based on predictions and the chosen strategy.
+* Homework
 
 [More details](04-trading-strategy-and-simulation/)
 
@@ -126,6 +127,7 @@ Streamlining Processes from Prediction to Action:
 * Explore automation techniques such as scheduling cron jobs for a series of .py files and consider data workflow solutions like Apache Airflow.
 * Learn to generate predictions and execute trades systematically.
 * [Maybe - Advanced] Implement automated email notifications containing predictions, trade details, and updates on profit/loss for the designated period.
+* Homework
 
 [More details](05-deployment-and-automation/)
 
