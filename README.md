@@ -30,9 +30,11 @@
 ### 2024 Cohort
 
 * **Start**: 15 April 2024 (Monday) at 17:00 GMT
-* **Registration link**: https://docs.google.com/forms/d/e/1FAIpQLSc5H6Jc-HJg9B7irveRASJCAS4BTnJcvM2QX2ykIGZ0UNgCPQ/viewform
+* **Registration Form**: [LINK](https://docs.google.com/forms/d/e/1FAIpQLSc5H6Jc-HJg9B7irveRASJCAS4BTnJcvM2QX2ykIGZ0UNgCPQ/viewform)
 * [Cohort folder](cohorts/2024/) with homeworks and deadlines
-* Launch stream with course overview: to be added after March 25th
+* **Pre-Launch stream with course overview and Q&A (streamed on 25th March 2024)**:
+  * [YouTube video](https://www.youtube.com/watch?v=oswTLnjkRUg&list=PLSWnIAnueyu8auG0v3VXfUkVJpLoeCJYF&index=1)
+  * [Slides](https://docs.google.com/presentation/d/1ne9zHiVoRWn3cahWBSGgkifJPa8L_0Yqy2CIPO83_DE/edit?usp=sharing)
 
 
 ### Self-paced mode
