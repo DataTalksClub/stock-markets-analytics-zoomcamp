@@ -32,9 +32,24 @@
 * **Start**: 15 April 2024 (Monday) at 17:00 GMT
 * **Registration Form**: [LINK](https://docs.google.com/forms/d/e/1FAIpQLSc5H6Jc-HJg9B7irveRASJCAS4BTnJcvM2QX2ykIGZ0UNgCPQ/viewform)
 * [Cohort folder](cohorts/2024/) with homeworks and deadlines
+
 * **Pre-Launch stream with course overview and Q&A (streamed on 25th March 2024)**:
   * [YouTube video](https://www.youtube.com/watch?v=oswTLnjkRUg&list=PLSWnIAnueyu8auG0v3VXfUkVJpLoeCJYF&index=1)
   * [Slides](https://docs.google.com/presentation/d/1ne9zHiVoRWn3cahWBSGgkifJPa8L_0Yqy2CIPO83_DE/edit?usp=sharing)
+
+
+* **Supplementary pre-read for the project selection:**
+   * Any recent financial news coverage:
+     * weekly news coverage on PythonInvest's Financial News Feed: https://pythoninvest.com/ 
+     * Simply Wall St Market Insights: https://simplywall.st/markets/insights
+     * Investing on CNBC: https://www.cnbc.com/investing/ 
+     * Unhedged podcast and articles: https://unhedged.ft.com/
+     * Yahoo Finance: https://finance.yahoo.com/
+   
+   * Books:
+     * [Unknown Market Wizards (latest edition)](https://www.amazon.com/Market-Wizards-paperback-traders-youve-ebook/dp/B0BW1163DW)
+     * [The Man Who Solved the Market](https://www.amazon.com/Man-Who-Solved-Market-Revolution-ebook/dp/B07NLFC63Y)
+     * [The Tao of Trading: How to Build Abundant Wealth in Any Market Condition](https://www.amazon.com/Tao-Trading-Abundant-Wealth-Condition-ebook/dp/B08BNGKKM5)
 
 
 ### Self-paced mode
