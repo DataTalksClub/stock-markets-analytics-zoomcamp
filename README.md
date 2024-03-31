@@ -39,8 +39,9 @@
 
 
 * **Supplementary pre-read for the project selection:**
-   * Any recent financial news coverage:
-     * weekly news coverage on PythonInvest's Financial News Feed: https://pythoninvest.com/ 
+   * Any recent financial news or analytics:
+     * Weekly news coverage on PythonInvest's Financial News Feed: https://pythoninvest.com/
+     * Analytical long-reads on PythonInvest's Blog: https://pythoninvest.com/blog 
      * Simply Wall St Market Insights: https://simplywall.st/markets/insights
      * Investing on CNBC: https://www.cnbc.com/investing/ 
      * Unhedged podcast and articles: https://unhedged.ft.com/
