@@ -47,7 +47,7 @@
      * Unhedged podcast and articles: https://unhedged.ft.com/
      * Yahoo Finance: https://finance.yahoo.com/
    
-   * Books:
+   * Books (note: these are affiliate links to Amazon):
      * [Unknown Market Wizards (latest edition)](https://amzn.to/3PJLADW)
      * [The Man Who Solved the Market](https://amzn.to/3TYKruy)
      * [The Tao of Trading: How to Build Abundant Wealth in Any Market Condition](https://amzn.to/3TYM5MN)
