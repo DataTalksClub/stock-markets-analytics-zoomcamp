@@ -48,9 +48,9 @@
      * Yahoo Finance: https://finance.yahoo.com/
    
    * Books:
-     * [Unknown Market Wizards (latest edition)](https://www.amazon.com/Market-Wizards-paperback-traders-youve-ebook/dp/B0BW1163DW)
-     * [The Man Who Solved the Market](https://www.amazon.com/Man-Who-Solved-Market-Revolution-ebook/dp/B07NLFC63Y)
-     * [The Tao of Trading: How to Build Abundant Wealth in Any Market Condition](https://www.amazon.com/Tao-Trading-Abundant-Wealth-Condition-ebook/dp/B08BNGKKM5)
+     * [Unknown Market Wizards (latest edition)](https://amzn.to/3PJLADW)
+     * [The Man Who Solved the Market](https://amzn.to/3TYKruy)
+     * [The Tao of Trading: How to Build Abundant Wealth in Any Market Condition](https://amzn.to/3TYM5MN)
 
 
 ### Self-paced mode
