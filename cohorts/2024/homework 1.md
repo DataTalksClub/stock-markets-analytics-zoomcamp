@@ -2,6 +2,7 @@
 
 In this homework, we're going to download finance data from various sources and make simple calculations/analysis.
 
+---
 ### Question 1: [Macro] Average growth of GDP in 2023
 
 **What is the average growth (in %) of GDP in 2023?**
@@ -10,6 +11,7 @@ Download the timeseries Real Gross Domestic Product (GDPC1) from FRED (https://f
 Calculate year-over-year (YoY) growth rate (that is, divide current value to one 4 quarters ago). Find the average YoY growth in 2023 (average from 4 YoY numbers).
 Round to 1 digit after the decimal point: e.g. if you get 5.66% growth => you should answer  5.7
 
+---
 ### Question 2. [Macro] Inverse "Treasury Yield"
 
 **Find the min value of (dgs10-dgs2) after since year 2000 (2000-01-01) and write it down as an answer, round to 1 digit after the decimal point.**
@@ -20,6 +22,7 @@ Download DGS2 and DGS10 interest rates series (https://fred.stlouisfed.org/serie
 
 (Additional: think about what does the "inverted yield curve" mean for the market and investors? do you see the same thing in your country/market of interest? Do you think it can be a good predictive feature for the models?)
 
+---
 ### Question 3. [Index] Which Index is better recently?
 
 **Compare S&P 500 and IPC Mexico indexes by the 5 year growth and write down the largest value as an answer (%)**
@@ -28,7 +31,7 @@ Download on Yahoo Finance two daily index prices for S&P 500 (^GSPC, https://fin
 
 (Additional: think of other indexes and try to download stats and compare the growth? Do create 10Y and 20Y growth stats. What is an average yearly growth rate (CAGR) for each of the indexes you select?)
 
-
+---
 ### Question 4. [Stocks OHLCV] 52-weeks range ratio (2023) for the selected stocks
 
 
@@ -44,7 +47,7 @@ Round the result to two decimal places (e.g. 0.1575 will be 0.16)
 
 (Additional: why this may be important for your research?)
 
-
+---
 ### Question 5. [Stocks] Dividend Yield
 **Find the largest dividend yield for the same set of stocks**
 
@@ -55,12 +58,14 @@ Sum up all dividends paid in 2023 per company and divide each value by the closi
 
 Find the maximm value in % and round to 1 digit after the decimal point. (E.g., if you obtained $1.25 dividends paid and the end year stock price is $100, the dividend yield is 1.25% -- and your answer should be equal to 1.3)
 
+---
 ### Question 6. [Exploratory] Investigate new metrics
 
 **Free text answer**
 
 Download and explore a few additional metrics or time series that might be valuable for your project and write down why (briefly).
 
+---
 ### Question 7. [Exploratory] Time-driven strategy description around earnings releases
 
 **Free text answer**
@@ -69,3 +74,6 @@ Explore earning dates for the whole month of April - e.g. using YahooFinance ear
 
 Describe an analytical strategy/idea (you're not required to implement it) to select a subset companies of interest based on the future events data.
 
+## Submitting the solutions
+
+Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw01
