@@ -20,7 +20,14 @@ Download DGS2 and DGS10 interest rates series (https://fred.stlouisfed.org/serie
 
 (Additional: think about what does the "inverted yield curve" mean for the market and investors? do you see the same thing in your country/market of interest? Do you think it can be a good predictive feature for the models?)
 
-### Question 3. tbd
+### Question 3. [Index] Which Index is better recently?
+
+**Compare S&P 500 and IPC Mexico indexes by the 5 year growth and write down the largest value as an answer (%)**
+
+Download on Yahoo Finance two daily index prices for S&P 500 (^GSPC, https://finance.yahoo.com/quote/%5EGSPC/) and IPC Mexico (^MXX, https://finance.yahoo.com/quote/%5EMXX/). Compare 5Y growth for both (between 2019-04-09 and 2024-04-09). Select the higher growing index and write down the growth in % (closest integer %). E.g. if ratio end/start was 2.0925 (or growth of 109.25%), you need to write down 109 as your answer.
+
+(Additional: think of other indexes and try to download stats and compare the growth? Do create 10Y and 20Y growth stats. What is an average yearly growth rate (CAGR) for each of the indexes you select?)
+
 
 ### Question 4. tbd
 
