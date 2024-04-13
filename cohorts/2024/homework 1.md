@@ -55,13 +55,13 @@ Sum up all dividends paid in 2023 per company and divide each value by the closi
 
 Find the maximm value in % and round to 1 digit after the decimal point. (E.g., if you obtained $1.25 dividends paid and the end year stock price is $100, the dividend yield is 1.25% -- and your answer should be equal to 1.3)
 
-### Question 6. [Exploratory] Exploratory new metrics
+### Question 6. [Exploratory] Investigate new metrics
 
 **Free text answer**
 
 Download and explore a few additional metrics or time series that might be valuable for your project and write down why (briefly).
 
-### Question 7. [Exploratory] Time-driven strategy around earnings releases
+### Question 7. [Exploratory] Time-driven strategy description around earnings releases
 
 **Free text answer**
 
