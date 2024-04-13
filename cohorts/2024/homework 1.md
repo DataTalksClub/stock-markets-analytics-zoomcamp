@@ -40,14 +40,32 @@ Download the 2023 daily OHLCV data on Yahoo Finance for top5 stocks on earnings 
 Here is the example data you should see in Pandas for "2222.SR": https://finance.yahoo.com/quote/2222.SR/history
 
 Calculate maximum-minimim "Adj.Close" price for each stock and divide it by the maximum "Adj.Close" value.
-
 Round the result to two decimal places (e.g. 0.1575 will be 0.16)
 
 (Additional: why this may be important for your research?)
 
 
-### Question 5. tbd
+### Question 5. [Stocks] Dividend Yield
+**Find the largest dividend yield for the same set of stocks**
 
-### Question 6. tbd
+Use the same list of companies (2222.SR,BRK-B, AAPL, MSFT, GOOG, JPM) and download all dividends paid in 2023.
+You can use `get_actions()` method or `.dividends` field in yfinance library (https://github.com/ranaroussi/yfinance?tab=readme-ov-file#quick-start)
 
-### Question 7. tbd
+Sum up all dividends paid in 2023 per company and divide each value by the closing price (Adj.Close) at the last trading day of the year.
+
+Find the maximm value in % and round to 1 digit after the decimal point. (E.g., if you obtained $1.25 dividends paid and the end year stock price is $100, the dividend yield is 1.25% -- and your answer should be equal to 1.3)
+
+### Question 6. [Exploratory] Exploratory new metrics
+
+**Free text answer**
+
+Download and explore a few additional metrics or time series that might be valuable for your project and write down why (briefly).
+
+### Question 7. [Exploratory] Time-driven strategy around earnings releases
+
+**Free text answer**
+
+Explore earning dates for the whole month of April - e.g. using YahooFinance earnings calendar (https://finance.yahoo.com/calendar/earnings?from=2024-04-21&to=2024-04-27&day=2024-04-23). Compare with the previous closed earnings (e.g., recent dates with full data https://finance.yahoo.com/calendar/earnings?from=2024-04-07&to=2024-04-13&day=2024-04-08). 
+
+Describe an analytical strategy/idea (you're not required to implement it) to select a subset companies of interest based on the future events data.
+
