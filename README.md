@@ -66,7 +66,7 @@ can take the course at your own pace
 
 ## (Detailed) Syllabus
 
-### [Module 1: Introduction and Data Sources](01-data-sources/)
+### [Module 1: Introduction and Data Sources](01-intro-and-data-sources/)
 
 * Understanding Data-Driven Decisions and Initiating Data Extraction
   * Explore the philosophy behind making decisions based on data.
