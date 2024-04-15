@@ -166,6 +166,16 @@ The best way to get support is to use [DataTalks.Club's Slack](https://datatalks
 
 To make discussions in Slack more organized:
 
-* Follow [these recommendations](asking-questions.md) when asking for help
 * Read the [DataTalks.Club community guidelines](https://datatalks.club/slack/guidelines.html)
+
+* Follow these recommendations when asking for help in Slack:
+  * Before posting a question, try to Google it and Check Course's FAQ ([Frequently asked technical questions](https://docs.google.com/document/d/1ABQD6ns4vZHKu2dHGqqJ85LCOF7LzxqfvWBVXb_-M9E/edit?usp=sharing)) first
+  * DO NOT use screenshots, especially don’t take pictures from a phone.
+  * DO NOT tag instructors, it may discourage others from helping you.
+  * Copy and paste errors; if it’s long, just post it in a reply to your thread. 
+  * Use ``` for formatting your code.
+  * Use the same thread for the conversation (that means replying to your own thread). 
+  * DO NOT create multiple posts to discuss the issue.
+  * You may create a new post if the issue reemerges down the road. Be sure to describe what has changed in the environment.
+  * Provide additional information in the same thread of the steps you have taken for resolution.
 
