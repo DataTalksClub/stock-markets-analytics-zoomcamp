@@ -80,7 +80,7 @@ can take the course at your own pace
   * When it becomes necessary to consider payment options in the API selection process.
 * Homework
 
-[More details](01-data-sources/)
+[More details](01-intro-and-data-sources/)
 
 
 ### [Module 2: Working with the Data (in Pandas)](02-dataframe-analysis/)
