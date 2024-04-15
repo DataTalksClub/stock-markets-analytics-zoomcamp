@@ -4,4 +4,4 @@
 
 - [Code in Colab](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/01-intro-and-data-sources/Module01_Colab_Introduction_and_Data_Sources.ipynb)
 
-- **Home assignment (homework1)** can be found in the [Cohorts](cohorts/) folder (for the respective year). You will find the submission link and the deadlines there too.
+- **Home assignment (homework1)** can be found in the [Cohorts](../cohorts/) folder (for the respective year). You will find the submission link and the deadlines there too.
