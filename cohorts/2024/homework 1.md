@@ -38,7 +38,7 @@ Download on Yahoo Finance two daily index prices for S&P 500 (^GSPC, https://fin
 **Find the largest range ratio [=(max-min)/max] of Adj.Close prices in 2023**
 
 
-Download the 2023 daily OHLCV data on Yahoo Finance for top5 stocks on earnings (https://companiesmarketcap.com/most-profitable-companies/): 2222.SR,BRK-B, AAPL, MSFT, GOOG, JPM.
+Download the 2023 daily OHLCV data on Yahoo Finance for top6 stocks on earnings (https://companiesmarketcap.com/most-profitable-companies/): 2222.SR,BRK-B, AAPL, MSFT, GOOG, JPM.
 
 Here is the example data you should see in Pandas for "2222.SR": https://finance.yahoo.com/quote/2222.SR/history
 
