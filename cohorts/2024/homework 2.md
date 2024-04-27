@@ -44,7 +44,7 @@ Addtional:
 ---
 ### Question 3: Is Growth Concentrated in the Largest Stocks?
 
-**Get the share of days when Large Stocks outperform (growth_7d - growth over 7 periods back) the Largest stocks?**
+**Get the share of days (percentage as int) when Large Stocks outperform (growth_7d - growth over 7 periods back) the Largest stocks?**
 
 
 Reuse [Code Snippet 5] to obtain OHLCV stats for 33 stocks 
@@ -121,4 +121,6 @@ E.g. (some ideas) Do you want to focus on the specific vertical? Do you want to 
 ---
 ## Submitting the solutions
 
-Form for submitting: tbd_link
+Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw02
+
+---
