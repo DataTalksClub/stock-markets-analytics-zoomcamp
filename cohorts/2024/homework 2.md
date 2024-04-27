@@ -15,7 +15,7 @@ Define a new field 'Avg_price' based on the "Price Range", which equals to NaN i
 You may be inspired by the function `extract_numbers()` in [Code Snippet 4], or you can write your own function to "parse" a string.
 Define a column "Shares_offered_value", which equals to "Shares Offered" * "Avg_price" (when both columns are defined; otherwise, it's NaN)
 
-Find the total sum in $m (closest INTEGER number) for all fillings during 2023, which happened on Fridays (`.dt.dayofweek()==4`). You should see 32 records in total, 24 of it is not null.
+Find the total sum in $m (closest INTEGER number) for all fillings during 2023, which happened on Fridays (`Date.dt.dayofweek()==4`). You should see 32 records in total, 24 of it is not null.
 
 (additional: you can read about [S-1 IPO filing](https://www.dfinsolutions.com/knowledge-hub/thought-leadership/knowledge-resources/what-s-1-ipo-filing) to understand the context)
 
@@ -84,6 +84,30 @@ For example, for the first of data you should have:
 On that day, the LARGEST group was growing faster than LARGE one (new stocks).
 
 Calculate the number of days when the LARGE GROUP (new smaller stocks) outperforms the LARGEST GROUP, divide it by the total number of trading days (which should be 2595 days), and convert it to a percentage (closest INTEGER value). For example, if you find that 1700 out of 2595 days meet this condition, it means that 1700/2595 = 0.655, or approximately 66% of days, the LARGE stocks were growing faster than the LARGEST ones. This suggests that you should consider extending your dataset with more stocks to seek higher growth.
+
+---
+### Question 4: Trying Another Technical Indicators strategy
+
+**What's the total gross profit (in THOUSANDS of $) you'll get from trading on CCI (no fees assumption)?**
+
+
+First, run the entire Colab to obtain the full DataFrame of data (after [Code Snippet 9]), and truncate it to the last full 10 years of data (2014-01-01 to 2023-12-31).
+If you encounter any difficulties running the Colab - you can download it using this [link](https://drive.google.com/file/d/1m3Qisfs2XfWk6Sw_Uk5kHLWqwQ0q8SKb/view?usp=sharing).
+
+Let's assume you've learned about the awesome **CCI indicator** ([Commodity Channel Index](https://www.investopedia.com/terms/c/commoditychannelindex.asp)), and decided to use only it for your operations.
+
+You defined the "defensive" value of a high threshould of 200, and you trade only on Fridays (`Date.dt.dayofweek()==4`).
+
+That is, every time you see that CCI is >200 for any stock (out of those 33), you'll invest $1000 at Adj.Close price and hold it for 1 week (5 trading days) in order to sell at the Adj. Close price.
+
+What's the expected gross profit (no fees) that you get in THOUSANDS $ (closest integer value) over many operations in 10 years?
+One operation calculations: if you invested $1000 and received $1010 in 5 days - you add $10 to gross profit, if you received $980 - add -$20 to gross profit.
+You need to sum these results over all trades (460 times in 10 years).
+
+Additional:
+  * Add an approximate fees calculation over the 460 trades from this calculator https://www.degiro.ie/fees/calculator (Product:"Shares, USA and Canada;" Amount per transaction: "1000 EUR"; Transactions per year: "460")
+  * are you still profitable on those trades?
+
 
 ---
 ## Submitting the solutions
