@@ -110,6 +110,15 @@ Additional:
 
 
 ---
+### [EXPLORATORY] Question 5: Finding Your Strategy for IPOs
+
+You've seen in the first questions that the median and average investments are negative in IPOs, and you can't blindly invest in all deals.
+
+How would you correct/refine the approach? Briefly describe the steps and the data you'll try to get (it should be generally feasible to do it from public sources - no access to internal data of companies)?
+
+E.g. (some ideas) Do you want to focus on the specific vertical? Do you want to build a smart comparison vs. existing stocks on the market? Or you just will want to get some features (which features?) like total number of people in a company to find a segment of "successful" IPOs?
+
+---
 ## Submitting the solutions
 
 Form for submitting: tbd_link
