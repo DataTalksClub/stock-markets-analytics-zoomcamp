@@ -98,7 +98,7 @@ Let's assume you've learned about the awesome **CCI indicator** ([Commodity Chan
 
 You defined the "defensive" value of a high threshould of 200, and you trade only on Fridays (`Date.dt.dayofweek()==4`).
 
-That is, every time you see that CCI is >200 for any stock (out of those 33), you'll invest $1000 at Adj.Close price and hold it for 1 week (5 trading days) in order to sell at the Adj. Close price.
+That is, every time you see that CCI is >200 for any stock (out of those 33), you'll invest $1000 (each record when CCI>200) at Adj.Close price and hold it for 1 week (5 trading days) in order to sell at the Adj. Close price.
 
 What's the expected gross profit (no fees) that you get in THOUSANDS $ (closest integer value) over many operations in 10 years?
 One operation calculations: if you invested $1000 and received $1010 in 5 days - you add $10 to gross profit, if you received $980 - add -$20 to gross profit.
