@@ -52,7 +52,7 @@ Additional:
 
 
 Reuse [Code Snippet 5] to obtain OHLCV stats for 33 stocks 
-for 10 full years of data (2014-01-01 to 2023-12-31):
+for 10 full years of data (2014-01-01 to 2023-12-31). You'll need to download slightly more data (7 periods before 2014-01-01 to calculate the growth_7d for the first 6 days correctly):
 
 `US_STOCKS = ['MSFT', 'AAPL', 'GOOG', 'NVDA', 'AMZN', 'META', 'BRK-B', 'LLY', 'AVGO','V', 'JPM']`
 
@@ -74,7 +74,7 @@ Now let's add the top 12-22 stocks (as of end-April 2024):
 
 `LARGE_STOCKS = NEW_EU + NEW_US + NEW_INDIA`
 
-You should be able to obtain stats for 33 LARGEST STOCKS and 32 LARGE STOCKS.
+You should be able to obtain stats for 33 LARGEST STOCKS and 32 LARGE STOCKS (from the actual stats on Yahoo Finance)
 
 Calculate  `growth_7d` for every stock and every day.
 Get the average daily `growth_7d` for the LARGEST_STOCKS group vs. the LARGE_STOCKS group.
