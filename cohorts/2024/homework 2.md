@@ -15,7 +15,7 @@ Define a new field 'Avg_price' based on the "Price Range", which equals to NaN i
 You may be inspired by the function `extract_numbers()` in [Code Snippet 4], or you can write your own function to "parse" a string.
 Define a column "Shares_offered_value", which equals to "Shares Offered" * "Avg_price" (when both columns are defined; otherwise, it's NaN)
 
-Find the total sum in $m (millions of USD, closest INTEGER number) for all fillings during 2023, which happened on Fridays (`Date.dt.dayofweek()==4`). You should see 32 records in total, 24 of it is not null.
+Find the total sum in $m (millions of USD, closest INTEGER number) for all fillings during 2023, which happened on Fridays (`Date.dt.dayofweek()==4`). You should see 32 records in total, 25 of it is not null.
 
 (additional: you can read about [S-1 IPO filing](https://www.dfinsolutions.com/knowledge-hub/thought-leadership/knowledge-resources/what-s-1-ipo-filing) to understand the context)
 
