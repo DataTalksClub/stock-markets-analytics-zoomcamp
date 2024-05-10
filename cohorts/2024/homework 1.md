@@ -77,3 +77,10 @@ Describe an analytical strategy/idea (you're not required to implement it) to se
 ## Submitting the solutions
 
 Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw01
+
+---
+## Leaderboard
+
+Leaderboard link: https://courses.datatalks.club/sma-zoomcamp-2024/leaderboard
+
+---
