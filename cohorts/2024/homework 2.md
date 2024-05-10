@@ -51,7 +51,7 @@ Additional:
 **Get the share of days (percentage as int) when Large Stocks outperform (growth_7d - growth over 7 periods back) the Largest stocks?**
 
 
-Reuse [Code Snippet 5] to obtain OHLCV stats for 33 stocks 
+Reuse [Code Snippet 7] to obtain OHLCV stats for 33 stocks 
 for 10 full years of data (2014-01-01 to 2023-12-31). You'll need to download slightly more data (7 periods before 2014-01-01 to calculate the growth_7d for the first 6 days correctly):
 
 `US_STOCKS = ['MSFT', 'AAPL', 'GOOG', 'NVDA', 'AMZN', 'META', 'BRK-B', 'LLY', 'AVGO','V', 'JPM']`
