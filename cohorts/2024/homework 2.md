@@ -130,3 +130,8 @@ E.g. (some ideas) Do you want to focus on the specific vertical? Do you want to 
 Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw02
 
 ---
+## Leaderboard
+
+Leaderboard link: https://courses.datatalks.club/sma-zoomcamp-2024/leaderboard
+
+---
