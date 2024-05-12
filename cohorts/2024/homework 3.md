@@ -10,19 +10,19 @@ Data: the new version of the data (after all transformations) is here: tbd
 ---
 ### Question 1 (1 point): Dummies on Month and Week-of-Month
 
-**What is the most correlated dummy <month-week_of_month> with the binary outcome variable (" is_positive_growth_5d_future")?**
+**Find the CORRELATION VALUE of the most correlated dummy <month-week_of_month> with the binary outcome variable (" is_positive_growth_5d_future")?**
 
-You saw in the correlation analysis and modeling that September and October may be important seasonal months. In this task, we'll go futher and try to generate dummies for Month and Week-of-month (starting from 1). For example, the first week of October should be coded as 'October-1'.
-Once you've generated the new set of variables, find the most correlated (in absolute value) one with "is_positive_growth_5d_future".
+You saw in the correlation analysis and modeling that September and October may be important seasonal months. In this task, we'll go futher and try to generate dummies for Month and Week-of-month (starting from 1). For example, the first week of October should be coded similar to this: 'October_w1'.
+Once you've generated the new set of variables, find the most correlated (in absolute value) one with "is_positive_growth_5d_future" and truncate it to 3 digits after the comma.
 
 Suggested path to a solution:
 - [[Source](https://stackoverflow.com/questions/25249033/week-of-a-month-pandas)] Use this formula to get the week of month for the datetime variable d: (d.day-1)//7+1   
 - Generate string values for each month-week_of_month combination
 - Use [pandas.get_dummies()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) to generate dummies
-- Use [pandas.DataFrame.corr()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html) function (also used in [Code Snippet 1]) to get correlations with "is_positive_growth_5d_future", filter out only variables representing the new dummy, and sort it (either on absolute values, or manually check head, tail for min and max values).
+- Use [pandas.DataFrame.corr()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html) function (also used in [Code Snippet 1]) to get correlations with "is_positive_growth_5d_future", filter out only variables representing the new dummy, and sort it by abs. values (you can define a new column in the dataframe with correlations), and find the highest value (among new dummies set).
 
 ---
-### Question 2 (2 points): Define a new "hand" rule on macro and tech variables
+### Question 2 (2 points): Define new "hand" rules on macro and technical indicators variables
 
 **What is the precision score for the best of the NEW variables (pred3 or pred4)**
 
@@ -73,7 +73,7 @@ You can also propose something entirely different based on your intuition, but i
 ---
 ## Submitting the solutions
 
-[WORK IN PROGRESS] Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw03
+[NOT READY YET] Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw03
 
 ---
 ## Leaderboard
