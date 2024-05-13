@@ -2,10 +2,8 @@
 
 In this homework, we're going to work with categorical variables, first ML models (Decision Trees), and hyperparameter tuning.
 
-If not stated otherwise, please use the [Colab Module 3](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/03-modeling/Module_3_Colab_Time_Series_Modeling.ipynb) covered in the livestream to re-use the code snippets.
-
-Data: the new version of the data (after all transformations) is here: tbd
-
+Please use the [Colab Module 3](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/03-modeling/Module_3_Colab_Time_Series_Modeling.ipynb) for all tasks to ensure you have the same dataframe used for the Modeling part, as covered during the lecture. 
+We suggest copying and extending it (around "TODO" comments). 
 
 ---
 ### Question 1 (1 point): Dummies on Month and Week-of-Month
@@ -13,13 +11,15 @@ Data: the new version of the data (after all transformations) is here: tbd
 **Find the CORRELATION VALUE of the most correlated dummy <month-week_of_month> with the binary outcome variable (" is_positive_growth_5d_future")?**
 
 You saw in the correlation analysis and modeling that September and October may be important seasonal months. In this task, we'll go futher and try to generate dummies for Month and Week-of-month (starting from 1). For example, the first week of October should be coded similar to this: 'October_w1'.
-Once you've generated the new set of variables, find the most correlated (in absolute value) one with "is_positive_growth_5d_future" and truncate it to 3 digits after the comma.
+Once you've generated the new set of variables, find the most correlated (in absolute value) one with "is_positive_growth_5d_future" and round it to 3 digits after the comma.
 
 Suggested path to a solution:
-- [[Source](https://stackoverflow.com/questions/25249033/week-of-a-month-pandas)] Use this formula to get the week of month for the datetime variable d: (d.day-1)//7+1   
-- Generate string values for each month-week_of_month combination
-- Use [pandas.get_dummies()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) to generate dummies
-- Use [pandas.DataFrame.corr()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html) function (also used in [Code Snippet 1]) to get correlations with "is_positive_growth_5d_future", filter out only variables representing the new dummy, and sort it by abs. values (you can define a new column in the dataframe with correlations), and find the highest value (among new dummies set).
+- [[Source](https://stackoverflow.com/questions/25249033/week-of-a-month-pandas)] Use this formula to get the week of month for the datetime variable d: `(d.day-1)//7+1` 
+- Define a new string variable for all month-week_of_month combinations. Append it to the CATEGORICAL features set. You should have 5 variables treated as CATEGORICAL now: 'Month', 'Weekday', 'Ticker', 'ticker_type', 'month_wom'.
+- Use [pandas.get_dummies()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) to generate dummies.
+- Use [pandas.DataFrame.corr()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html) function (also used in [Code Snippet 1]) to get correlations with "is_positive_growth_5d_future", filter out only variables representing the new dummy set, and sort it by absolute values (you can define a new column "abs_corr" in the dataframe with correlations), and find the highest value (among new dummies set).
+
+**NOTE**: these new dummies will be used as features in the next tasks, please leave it in the dataset.
 
 ---
 ### Question 2 (2 points): Define new "hand" rules on macro and technical indicators variables
