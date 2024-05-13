@@ -29,13 +29,13 @@ Suggested path to a solution:
 Let's utilize the knowledge from the visualised tree (clf10) (Code Snippet 5: 1.4.4 Visualisation).
 You're asked to define two new 'hand' rules (leading to 'positive' subtrees): 
 - pred3_manual_gdp_fastd: (gdppot_us_yoy <= 0.027) & (fastd >= 0.251)
-- pred4_manual_gpd_wti_oil: (gdppot_us_yoy >= 0.027) & (growth_wti_oil_30d <= 1.005)
+- pred4_manual_gdp_wti_oil: (gdppot_us_yoy >= 0.027) & (growth_wti_oil_30d <= 1.005)
 
-Define these two new variables and add them to the dataframe.
-What is the precision score for them? Write down the best of two (round to the three decimal places
-). E.g. if you have 0.5789, your answer should be 0.579.
+Extend the Code Snippet 3 (Manual "hand rule" predictions): Calculate and add them to the dataframe.
+You should notice that one of the predictions doesn't have any positive predictions on TEST dataset. 
+Please debug that: check in the 'new_df' and the original dataset/data generation process that we didn't make any mistakes at the data transformations step; explain why this can happen even if there are no mistakes at the data transformation step.
 
-(Additional: Are these two new 'hand' rules better than previously defined ones? If yes, then why do you think so?)
+As a result, write down the precision score for the remaining predictor (round to three decimal points). E.g. if you have 0.57897, your answer should be 0.579.
 
 ---
 ### Question 3 (1 point): Join predictions to the original dataframe
