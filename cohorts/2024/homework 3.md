@@ -90,7 +90,7 @@ You can also propose something entirely different based on your intuition, but i
 ---
 ## Submitting the solutions
 
-[NOT READY YET] Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw03
+Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw03
 
 ---
 ## Leaderboard
