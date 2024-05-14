@@ -41,7 +41,7 @@ Let's utilize the knowledge from the visualised tree (clf10) (Code Snippet 5: 1.
 * As a result, write down the precision score for the remaining predictor (round to three decimal points). E.g. if you have 0.57897, your answer should be 0.579.
 
 ---
-### Question 3 (1 point): Unique correct predictions from a 10-levels deep decision tree classifier (pred5_clf_10) 
+### Question 3 (1 point): Unique correct predictions from a 10-levels deep Decision Tree Classifier (pred5_clf_10) 
 
 **What is the total number of records in the TEST dataset when the new prediction pred5_clf_10 is better than all 'hand' rules (pred0..pred4)?**
 
@@ -54,7 +54,7 @@ Suggested solution:
 
 * Step3: Convert 'only_pred5_is_correct' column from bool to int, and find how many times it is equal to 1 in the TEST set. Write down this as an answer.
 
-ADVANCED: define a function that can be applied to the whole row ([examples](https://sparkbyexamples.com/pandas/pandas-apply-function-to-every-row/)) and can find whether some prediction 'predX' (where X is one of the predictions) is uniquely correct. It should work even if there are 100 predictions available, so that you don't define manually the condition.  
+ADVANCED: define a function that can be applied to the whole row of predictions ([a few examples of pandas-apply-row-functions](https://sparkbyexamples.com/pandas/pandas-apply-function-to-every-row/)) and can find whether some prediction 'predX' (where X is one of the predictions) is uniquely correct. It should work even if there are 100 predictions available, so that you don't define manually the condition for 'predX'.  
 
 ---
 ### Question 4: (2 points) Hyperparameter tuning for a Decision Tree
