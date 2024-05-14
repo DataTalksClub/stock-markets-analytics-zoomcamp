@@ -8,34 +8,37 @@ We suggest copying and extending it (around "TODO" comments).
 ---
 ### Question 1 (1 point): Dummies on Month and Week-of-Month
 
-**Find the CORRELATION VALUE of the most correlated dummy <month-week_of_month> with the binary outcome variable (" is_positive_growth_5d_future")?**
+**Find the ABSOLUTE CORRELATION VALUE of the most correlated dummy <month-week_of_month> with the binary outcome variable `is_positive_growth_5d_future`?**
 
 You saw in the correlation analysis and modeling that September and October may be important seasonal months. In this task, we'll go futher and try to generate dummies for Month and Week-of-month (starting from 1). For example, the first week of October should be coded similar to this: 'October_w1'.
-Once you've generated the new set of variables, find the most correlated (in absolute value) one with "is_positive_growth_5d_future" and round it to 3 digits after the comma.
+Once you've generated the new set of variables, find the most correlated (in absolute value) one with `is_positive_growth_5d_future` and round it to 3 digits after the comma.
 
 Suggested path to a solution:
 - [[Source](https://stackoverflow.com/questions/25249033/week-of-a-month-pandas)] Use this formula to get the week of month for the datetime variable d: `(d.day-1)//7+1` 
-- Define a new string variable for all month-week_of_month combinations. Append it to the CATEGORICAL features set. You should have 5 variables treated as CATEGORICAL now: 'Month', 'Weekday', 'Ticker', 'ticker_type', 'month_wom'.
+- Define a new string variable for all month-week_of_month combinations. Append it to the CATEGORICAL features set. You should have 5 variables treated as CATEGORICAL now: 'Month', 'Weekday', 'Ticker', 'ticker_type', 'month_wom'. In the end, you should get 115 dummy features, including 60 (=12*5) week_month_of_week dummies.
 - Use [pandas.get_dummies()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html) to generate dummies.
-- Use [pandas.DataFrame.corr()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html) function (also used in [Code Snippet 1]) to get correlations with "is_positive_growth_5d_future", filter out only variables representing the new dummy set, and sort it by absolute values (you can define a new column "abs_corr" in the dataframe with correlations), and find the highest value (among new dummies set).
+- Use [pandas.DataFrame.corr()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html) function (also used in [Code Snippet 1]) to get correlations with `is_positive_growth_5d_future`, filter out only variables representing the new dummy set, and sort it by absolute values (you can define a new column "abs_corr" in the dataframe with correlations), and find the highest value (among the new dummies features set).
 
 **NOTE**: new dummies will be used as features in the next tasks, please leave them in the dataset.
 
 ---
 ### Question 2 (2 points): Define new "hand" rules on macro and technical indicators variables
 
-**What is the precision score for the best of the NEW variables (pred3 or pred4)**
+**What is the precision score for the best of the NEW predictions (pred3 or pred4), rounded to 3 digits after the comma?**
 
-Let's utilize the knowledge from the visualised tree (clf10) (Code Snippet 5: 1.4.4 Visualisation).
-You're asked to define two new 'hand' rules (leading to 'positive' subtrees): 
-- pred3_manual_gdp_fastd: (gdppot_us_yoy <= 0.027) & (fastd >= 0.251)
-- pred4_manual_gdp_wti_oil: (gdppot_us_yoy >= 0.027) & (growth_wti_oil_30d <= 1.005)
+Let's utilize the knowledge from the visualised tree (clf10) (Code Snippet 5: 1.4.4 Visualisation):
 
-Extend the Code Snippet 3 (Manual "hand rule" predictions): Calculate and add them to the dataframe.
-You should notice that one of the predictions doesn't have any positive predictions on TEST dataset. 
-Please debug that: check in the 'new_df' and the original dataset/data generation process that we didn't make any mistakes at the data transformations step; explain why this can happen even if there are no mistakes at the data transformation step.
+* You're asked to define two new 'hand' rules (leading to 'positive' subtrees): 
+  - `pred3_manual_gdp_fastd`: (gdppot_us_yoy <= 0.027) & (fastd >= 0.251)
+  - `pred4_manual_gdp_wti_oil`: (gdppot_us_yoy >= 0.027) & (growth_wti_oil_30d <= 1.005)
 
-As a result, write down the precision score for the remaining predictor (round to three decimal points). E.g. if you have 0.57897, your answer should be 0.579.
+* Extend the Code Snippet 3 (Manual "hand rule" predictions): Calculate and add new rules (pred3 and pred4) to the dataframe.You should notice that one of the predictions doesn't have any positive predictions on TEST dataset (while it has many on TRAIN+VALIDATION). 
+
+* Debug: check in the `new_df` and the original dataset/data generation process that we didn't make any mistakes during the data transformation step.
+
+* Explain why this can happen even if there are no errors in the data features.
+
+* As a result, write down the precision score for the remaining predictor (round to three decimal points). E.g. if you have 0.57897, your answer should be 0.579.
 
 ---
 ### Question 3 (1 point): Unique correct predictions from a 10-levels deep decision tree classifier (pred5_clf_10) 
