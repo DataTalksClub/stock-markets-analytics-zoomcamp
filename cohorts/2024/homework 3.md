@@ -45,11 +45,11 @@ As a result, write down the precision score for the remaining predictor (round t
 NOTE: please include `random_state=42` to Decision Tree Classifier init function (line `clf = DecisionTreeClassifier(max_depth=max_depth, random_state=42)`) to ensure everyone gets the same results.
 
 Suggested solution:
-* Rewrite the '1.4.3 Inference for a decision tree' piece for the Decision Tree Classifier with max_depth=10 (clf_10), so that you fit the model on TRAIN+VALIDATION sets (unchanged from the lecture), but predict on the whole set X_all (to be able to define a new column 'pred5_clf_10' in the dataframe new_df). Here is the [link](https://stackoverflow.com/questions/40729162/merging-results-from-model-predict-with-original-pandas-dataframe) with explanation. It will solve the problem in 1.4.5 when predictions were made only for Test dataset and couldn't be easily joined with the full dataset. 
+* Step1: Rewrite the '1.4.3 Inference for a decision tree' piece for the Decision Tree Classifier with max_depth=10 (clf_10), so that you fit the model on TRAIN+VALIDATION sets (unchanged from the lecture), but predict on the whole set X_all (to be able to define a new column 'pred5_clf_10' in the dataframe new_df). Here is the [link](https://stackoverflow.com/questions/40729162/merging-results-from-model-predict-with-original-pandas-dataframe) with explanation. It will solve the problem in 1.4.5 when predictions were made only for Test dataset and couldn't be easily joined with the full dataset. 
 
-* Once you have it, define a new column 'only_pred5_is_correct' similar to 'hand' prediction rules with several conditions: is_positive_growth_5d_future AND is_correct_pred5 should be equal 1, while all other predictions is_correct_pred0..is_correct_pred4 should be equal to 0.
+* Step2: Once you have it, define a new column 'only_pred5_is_correct' similar to 'hand' prediction rules with several conditions: is_positive_growth_5d_future AND is_correct_pred5 should be equal 1, while all other predictions is_correct_pred0..is_correct_pred4 should be equal to 0.
 
-* Convert 'only_pred5_is_correct' column from bool to int, and find how many times it is equal to 1 in the TEST set. Write down this as an answer.
+* Step3: Convert 'only_pred5_is_correct' column from bool to int, and find how many times it is equal to 1 in the TEST set. Write down this as an answer.
 
 ADVANCED: define a function that can be applied to the whole row ([examples](https://sparkbyexamples.com/pandas/pandas-apply-function-to-every-row/)) and can find whether some prediction 'predX' (where X is one of the predictions) is uniquely correct. It should work even if there are 100 predictions available, so that you don't define manually the condition.  
 
@@ -58,16 +58,26 @@ ADVANCED: define a function that can be applied to the whole row ([examples](htt
 
 **What is the optimal tree depth (from 1 to 20) for a DecisionTreeClassifier?**
 
-Modify the section 1.4 [Code Snippet 4]
-* Re-define the train set X_train (using the condition split=='train'), create a validation set X_valid (using the condition split=='validation'), and leave the test set X_test unchanged.
-* Apply the same data transformation rules (replace +-inf with NaN and then replace all NaNs with 0).
-* Iterate in a loop for max_depth between 1 and 20: 
-  * Train the DecisionTreeClassifier (clf) with max_depth=k on a train set.
-  * Find the precision and accuracy scores on the validation set.
-* Select the **best_max_depth** based on precision only and write it down as an answer.
-* Define a new feature pred6_best_clf and join with the dataframe (using the method from Q3)
+NOTE: please include `random_state=42` to Decision Tree Classifier init function (line `clf = DecisionTreeClassifier(max_depth=max_depth, random_state=42)`) to ensure consistency in results.
 
-(Advanced: Read about [scikit-learn Decision Trees](https://scikit-learn.org/stable/modules/tree.html). Do you see the 'saturation' of precision/accuracy when max_depth is increasing, or there is a tendency of overfitting?)
+Find optimal value of max_depth (between 1 and 20), building more and more advanced (=deep) trees when max_depth is growing.
+
+Follow these steps to find the optimal `max_depth`:
+* Iterate through `max_depth` values from 1 to 20.
+* Train the Decision Tree Classifier with the current `max_depth` parameter.
+* Optionally, visualize the 'head' of a tree using the [`sklearn.tree.plot_tree()`](https://scikit-learn.org/stable/modules/generated/sklearn.tree.plot_tree.html) function, or the compact way  using the `export_text()` functionality ([read](https://stackoverflow.com/questions/20156951/how-do-i-find-which-attributes-my-tree-splits-on-when-using-scikit-learn)):
+  ```
+  from sklearn.tree import export_text
+  tree_rules = export_text(model, feature_names=list(X_train), max_depth=3)
+  print(tree_rules)
+  ```
+* Calculate the precision score (you can use the function [sklearn.metrics.precision_score()](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)) on the TEST dataset for each of the fitted trees. 
+* Identify the optimal `max_depth`, where the  precision score is the highest on the TEST dataset. Record this value as  **best_max_depth** and submit as an answer.
+* Make predictions on all records (TRAIN+VALIDATION+TEST) and add the new prediction `pred6_clf_best` to the dataframe `new_df`.
+
+Additionally, compare the precision score of the tuned decision tree with previous predictions. You should observe an improvement (>0.58, or more than 58% precision), indicating that the tuned tree outperforms previous models.
+
+(Advanced: Explore the concept of overfitting with [scikit-learn Decision Trees](https://scikit-learn.org/stable/modules/tree.html). Draw a line of precision/accuracy vs. max_depth and note whether there's a saturation of precision/accuracy as max_depth increases or if there's a tendency towards overfitting.)
 
 ---
 ### [EXPLORATORY] Question 5: What data is missing? 
