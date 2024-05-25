@@ -68,7 +68,7 @@ NOTE: please include `random_state=42` to Decision Tree Classifier init function
 
 Follow these steps to find the optimal `max_depth`:
 * Iterate through `max_depth` values from 1 to 20.
-* Train the Decision Tree Classifier with the current `max_depth` parameter.
+* Train the Decision Tree Classifier with the current `max_depth` parameter on TRAIN+VALIDATION set.
 * Optionally, visualize how the 'head' of each fitted tree changes with more advanced (=deep) trees. You can use the [`sklearn.tree.plot_tree()`](https://scikit-learn.org/stable/modules/generated/sklearn.tree.plot_tree.html) function, or the compact way  with the `export_text()` functionality ([Stack Overflow example](https://stackoverflow.com/questions/20156951/how-do-i-find-which-attributes-my-tree-splits-on-when-using-scikit-learn)):
   ```
   from sklearn.tree import export_text
