@@ -59,3 +59,24 @@ Write down the new CAGR as a result.
 
 (Advanced): You should see that the trick with predicting strong growth didn't work, as it didn't improve the CAGR. What are the potential reasons for this? Are we missing some steps?
 
+
+---
+
+### Question 4 (1 point): [EXPLORATORY] Describe Your Ideal Strategy
+
+We've seen many strategies to produce predictions and have made significant improvements, but we've only explored one trading strategy: 'Invest $100 in each positive prediction'. Think about your best strategy for trading on these predictions and describe it.
+
+Consider how you would combine the predictions, better utilize your capital, achieve efficiency (fewer trades), and possibly make other optimizations (e.g., stop loss, timing of entry/selling, portfolio optimization, short trades for market-neutral strategies). Please write down the specific details of what you would use and how you would implement your strategy.
+
+---
+
+## Submitting the solutions
+
+Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2024/homework/hw04
+
+---
+## Leaderboard
+
+Leaderboard link: https://courses.datatalks.club/sma-zoomcamp-2024/leaderboard
+
+---
