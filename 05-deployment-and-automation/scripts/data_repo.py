@@ -11,7 +11,10 @@ import os
 import pandas_datareader as pdr
 
 # https://companiesmarketcap.com/usa/largest-companies-in-the-usa-by-market-cap/
-US_STOCKS = ['MSFT', 'AAPL', 'GOOG', 'NVDA', 'AMZN', 'META', 'BRK-B', 'LLY', 'AVGO','V', 'JPM']
+US_STOCKS = ['MSFT', 'AAPL', 'GOOG', 'NVDA', 'AMZN', 'META', 'BRK-B', 'LLY', 'AVGO','V', 'JPM','TSLA',
+             'WMT','XOM', 'UNH', 'MA','PG', 'ORCL', 'COST', 'JNJ', 'HD', 'MRK', 'BAC', 'ABBV', 'CVX',
+             'NFLX', 'KO', 'AMD', 'ADBE', 'CRM', 'PEP', 'QCOM', 'TMO', 'TMUS', 'WFC', 'CSCO', 'AMAT', 'DHR',
+             'MCD','DIS', 'ABT', 'TXN', 'GE', ' INTU', 'VZ', 'AMGN', 'AXP', 'CAT', 'IBM', 'PFE', 'PM', 'MS']
 # https://companiesmarketcap.com/european-union/largest-companies-in-the-eu-by-market-cap/
 EU_STOCKS = ['NVO','MC.PA', 'ASML', 'RMS.PA', 'OR.PA', 'SAP', 'ACN', 'TTE', 'SIE.DE','IDEXY','CDI.PA']
 # https://companiesmarketcap.com/india/largest-companies-in-india-by-market-cap/
