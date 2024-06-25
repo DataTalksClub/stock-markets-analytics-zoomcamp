@@ -80,7 +80,7 @@ def main():
   pd.set_option('display.max_columns', None)
   pd.set_option('display.max_colwidth', None)
 
-  print(trained.df_full[trained.df_full[f'{prediction_name}_rank']==1].sort_values(by="Date").tail(10)[COLUMNS])
+  print(trained.df_full[trained.df_full[f'{prediction_name}_rank']<=2].sort_values(by=["Date",f'{prediction_name}_rank']).tail(10)[COLUMNS])
 
 
 if __name__ == "__main__":
