@@ -90,3 +90,10 @@ Suggested set of things to include:
     * [ ] (1 point) Containerization.
     * [ ] (1 point) Cloud deployment.
     * [ ] (1-2 points) Subjective bonus points from a peer reviewer: why do you like the project, what was particularly well done in the project?
+
+## Project Submission
+* [2024, Project submission attempt 1]
+Please submit your projects here before end of day 2024-07-14 (23:59:59 GMT+1)
+https://courses.datatalks.club/sma-zoomcamp-2024/project/project1
+* [2024, Project review attempt 1]
+Please review 3 peers projects between 2024-07-15 (00:00:00 GMT+1) and 2024-07-21 (23:59:59 GMT+1) https://courses.datatalks.club/sma-zoomcamp-2024/project/project1/eval
