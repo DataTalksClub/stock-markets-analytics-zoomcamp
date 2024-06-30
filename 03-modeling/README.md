@@ -1,6 +1,7 @@
 # Modeling for Time Series
 
-- [Youtube Recording](https://www.youtube.com/watch?v=_dm2G9CbDTM) livestreamed on May 10th 2024 (5pm GMT+1)
+- Youtube Recording of the livestream on May 10th 2024 <br>
+  [![Youtube Recording](https://markdown-videos-api.jorgenkh.no/youtube/_dm2G9CbDTM)](https://www.youtube.com/watch?v=_dm2G9CbDTM)
 
 - [Slides](https://docs.google.com/presentation/d/e/2PACX-1vQQ1sQQvcCc9RvIPM73mPeMsUJEfMaZR6StYv24C6ROMqIkioWLN6VKizC2TW3hXYLqmxbZYmTLenXV/pub?start=false&loop=false&delayms=3000)  
 
