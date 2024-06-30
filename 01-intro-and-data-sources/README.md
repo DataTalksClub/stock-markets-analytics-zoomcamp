@@ -1,7 +1,7 @@
 # Introduction and Data Sources
 
 - Youtube Recording of the livestream on April 15th 2024 <br>
-  [![Youtube Recording](https://markdown-videos-api.jorgenkh.no/youtube/O9XpN41cHmE)](https://www.youtube.com/watch?v=O9XpN41cHmE)
+[![Youtube Recording](https://markdown-videos-api.jorgenkh.no/youtube/O9XpN41cHmE)](https://www.youtube.com/watch?v=O9XpN41cHmE)
 
 - [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTzt1RZQn3fItTdueUmh6FJyNd7X0XzwtcUeFu2S8gI0E0eVvk5bpozkKSv53G1hs03jBrWtHxzx_an/pub?start=false&loop=false&delayms=3000)  
 
