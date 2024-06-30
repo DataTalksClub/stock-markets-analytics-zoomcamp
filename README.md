@@ -34,7 +34,7 @@
 * [Cohort folder](cohorts/2024/) with homeworks and deadlines
 
 * **Pre-Launch stream with course overview and Q&A (streamed on 25th March 2024)**:
-  * [YouTube video](https://www.youtube.com/watch?v=oswTLnjkRUg&list=PLSWnIAnueyu8auG0v3VXfUkVJpLoeCJYF&index=1)
+  * [![YouTube video](https://markdown-videos-api.jorgenkh.no/youtube/oswTLnjkRUg)](https://www.youtube.com/watch?v=oswTLnjkRUg&list=PLSWnIAnueyu8auG0v3VXfUkVJpLoeCJYF&index=1)
   * [Slides](https://docs.google.com/presentation/d/e/2PACX-1vSV8yZ6edMcJGvVuPWJxfict7pDI1YG8Ddbef7wRfnSEz_Q-59LUr60fcvYChF5dg-sSKzGkYQUPyif/pub?start=false&loop=false&delayms=3000&slide=id.g1d0e930b61f_0_81)
 
 
