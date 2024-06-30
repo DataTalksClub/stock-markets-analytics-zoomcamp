@@ -150,7 +150,7 @@ Streamlining Processes from Prediction to Action:
 [More details](05-deployment-and-automation/)
 
 
-### [Project](project)
+### [Project](projects)
 
 Putting everything we learned to practice
 
