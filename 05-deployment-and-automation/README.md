@@ -1,6 +1,7 @@
 # Deployment and Automation Module
 
-- [Watch the Youtube Recording](https://www.youtube.com/watch?v=tk7UoILcJ34) livestreamed on June 24rd, 2024 (5pm GMT+1)
+- Youtube Recording of the livestream on June 24th 2024 <br>
+[![Youtube Recording](https://markdown-videos-api.jorgenkh.no/youtube/tk7UoILcJ34)](https://www.youtube.com/watch?v=tk7UoILcJ34)
 
 - [View the Slides](https://docs.google.com/presentation/d/e/2PACX-1vSYzqwh8LkFDc2v-3BEr2UnFe5ifL5Hp3a5iWbjhJ86xjtaLu7HrIMH82JU4yOO7NcY9c5pcnDui6gG/pub?start=false&loop=false&delayms=3000)  
 
