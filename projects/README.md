@@ -92,8 +92,17 @@ Suggested set of things to include:
     * [ ] (1-2 points) Subjective bonus points from a peer reviewer: why do you like the project, what was particularly well done in the project?
 
 ## Project Submission
+
+### Attempt 1
 * [2024, Project submission attempt 1]
-Please submit your projects here before end of day 2024-07-14 (23:59:59 GMT+1)
+Please submit your projects here before end of day 2024-07-15 (23:59:59 GMT+1)
 https://courses.datatalks.club/sma-zoomcamp-2024/project/project1
 * [2024, Project review attempt 1]
-Please review 3 peers projects between 2024-07-15 (00:00:00 GMT+1) and 2024-07-21 (23:59:59 GMT+1) https://courses.datatalks.club/sma-zoomcamp-2024/project/project1/eval
+Please review 3 peers projects between 2024-07-16 (00:00:00 GMT+1) and 2024-07-23 (23:59:59 GMT+1) https://courses.datatalks.club/sma-zoomcamp-2024/project/project1/eval
+
+### Attempt 2
+* [2024, Project submission attempt 2]
+Please submit your projects here before end of day 2024-08-05 (23:59:59 GMT+1)
+https://courses.datatalks.club/sma-zoomcamp-2024/project/project2
+* [2024, Project review attempt 2]
+Please review 3 peers projects between 2024-08-06 (00:00:00 GMT+1) and 2024-08-12 (23:59:59 GMT+1) https://courses.datatalks.club/sma-zoomcamp-2024/project/project2/eval
