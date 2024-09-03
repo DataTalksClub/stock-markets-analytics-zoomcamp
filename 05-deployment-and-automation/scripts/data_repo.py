@@ -11,14 +11,41 @@ import os
 import pandas_datareader as pdr
 
 # https://companiesmarketcap.com/usa/largest-companies-in-the-usa-by-market-cap/
+
+# BEFORE 3-Sep-2024
 US_STOCKS = ['MSFT', 'AAPL', 'GOOG', 'NVDA', 'AMZN', 'META', 'BRK-B', 'LLY', 'AVGO','V', 'JPM','TSLA',
              'WMT','XOM', 'UNH', 'MA','PG', 'ORCL', 'COST', 'JNJ', 'HD', 'MRK', 'BAC', 'ABBV', 'CVX',
              'NFLX', 'KO', 'AMD', 'ADBE', 'CRM', 'PEP', 'QCOM', 'TMO', 'TMUS', 'WFC', 'CSCO', 'AMAT', 'DHR',
              'MCD','DIS', 'ABT', 'TXN', 'GE', ' INTU', 'VZ', 'AMGN', 'AXP', 'CAT', 'IBM', 'PFE', 'PM', 'MS']
+
+# 3-Sep-2024: top-190 US stocks with >$50b market cap
+US_STOCKS = [
+    "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "META", "BRK-B", "LLY", "AVGO", "TSLA",
+    "JPM", "WMT", "UNH", "V", "XOM", "MA", "PG", "JNJ", "COST", "ORCL", "HD", "ABBV",
+    "BAC", "KO", "MRK", "NFLX", "CVX", "ADBE", "PEP", "CRM", "TMUS", "TMO", "AMD",
+    "MCD", "CSCO", "WFC", "ABT", "PM", "DHR", "IBM", "TXN", "QCOM", "AXP", "VZ",
+    "GE", "AMGN", "INTU", "NOW", "ISRG", "NEE", "CAT", "DIS", "RTX", "MS", "PFE",
+    "SPGI", "UNP", "GS", "CMCSA", "AMAT", "UBER", "PGR", "T", "LOW", "SYK", "LMT",
+    "HON", "TJX", "BLK", "ELV", "REGN", "BKNG", "COP", "VRTX", "NKE", "BSX", "PLD",
+    "SCHW", "C", "PANW", "MMC", "ADP", "KKR", "UPS", "ADI", "AMT", "SBUX", "DE",
+    "ANET", "BMY", "HCA", "CI", "KLAC", "FI", "LRCX", "BX", "GILD", "MU", "BA", "SO",
+    "MDLZ", "ICE", "MO", "SHW", "DUK", "MCO", "CL", "INTC", "WM", "ZTS", "GD", "CTAS",
+    "EQIX", "DELL", "NOC", "CME", "SCCO", "TDG", "SNPS", "APH", "WELL", "MCK", "PH",
+    "PYPL", "ITW", "MSI", "PNC", "ABNB", "CMG", "USB", "CVS", "MMM", "FDX", "EOG",
+    "ECL", "BDX", "CDNS", "TGT", "WDAY", "PLTR", "CSX", "ORLY", "CRWD", "MAR", "RSG",
+    "AJG", "APO", "CARR", "EPD", "SPG", "APD", "AFL", "MRVL", "PSA", "DHI", "NEM",
+    "FCX", "ROP", "SLB", "TFC", "FTNT", "EMR", "MPC", "NSC", "CEG", "PSX", "ADSK",
+    "COF", "WMB", "ET", "IBKR", "GM", "MET", "O", "AEP", "OKE", "AZO", "HLT", "GEV",
+    "SRE", "PCG", "DASH", "TRV", "CPRT", "OXY", "ROST", "KDP", "ALL", "BK", "DLR"
+]
+
+
 # https://companiesmarketcap.com/european-union/largest-companies-in-the-eu-by-market-cap/
-EU_STOCKS = ['NVO','MC.PA', 'ASML', 'RMS.PA', 'OR.PA', 'SAP', 'ACN', 'TTE', 'SIE.DE','IDEXY','CDI.PA']
+EU_STOCKS = [] # 3-Sep-2024 : Remove EU stocks
+# ['NVO','MC.PA', 'ASML', 'RMS.PA', 'OR.PA', 'SAP', 'ACN', 'TTE', 'SIE.DE','IDEXY','CDI.PA']
 # https://companiesmarketcap.com/india/largest-companies-in-india-by-market-cap/
-INDIA_STOCKS = ['RELIANCE.NS','TCS.NS','HDB','BHARTIARTL.NS','IBN','SBIN.NS','LICI.NS','INFY','ITC.NS','HINDUNILVR.NS','LT.NS']
+INDIA_STOCKS = [] # 3-Sep-2024 : Remove Indian stocks
+# ['RELIANCE.NS','TCS.NS','HDB','BHARTIARTL.NS','IBN','SBIN.NS','LICI.NS','INFY','ITC.NS','HINDUNILVR.NS','LT.NS']
 
 
 
