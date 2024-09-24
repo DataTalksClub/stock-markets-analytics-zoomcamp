@@ -20,7 +20,7 @@ This table highlights the top performers for the capstone project portion of the
 | No. | tags | time_spent | project_score | passed | Full Name | Country | github_link |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | ±80 EU,US,JP stocks; 55 years of data; ruff linter/formatter; 6% CAGR  | 20.0 | 14 | True | nan | nan | [Repo Link](https://github.com/Yelinz/analytics-zoomcamp) |
-| 2 | Replicates research paper with code (classes, LTSM, Torch); HFT; 30 stocks; portfolio optimisation; trade config; 20% CAGR | 20.0 | 14 | True | nan | nan | [Repo Link](https://github.com/hwting1/Stock-Markets-Analytics-Zoomcamp-Project) |
+| 2 | Replicates research paper with code (classes, LTSM, Torch); HFT; 30 stocks; portfolio optimisation; trade config; 20% CAGR | 20.0 | 14 | True | Haowei Ting | Taiwan | [Repo Link](https://github.com/hwting1/Stock-Markets-Analytics-Zoomcamp-Project) |
 | 3 | Forex trading mostly using tech. indicators ; ML models with PyCaret (14 models); end-to-end ML pipeline; not clear on data/CAGR (12%?) | 35.0 | 23 | True | Roman | Ukraine | [Repo Link](https://github.com/py310/smaz_project) |
 | 4 | Indian stocks (15 years history) aiming to get more than 14% CAGR and beat the index (NIFTY 50); no simulation and CAGR | 14.0 | 16 | True | P K Nayak  | India | [Repo Link](https://github.com/MekongDelta-mind/sma_project_repo/tree/capstone_rev_1) |
 | 5 | ETFs; ARIMA and LTSM models | 48.0 | 8 | True | nan | nan | [Repo Link](https://github.com/bsenst/stock-markets-analytics-zoomcamp/tree/main/projects/etf-analytics) |
