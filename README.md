@@ -47,10 +47,11 @@
      * Unhedged podcast and articles: https://unhedged.ft.com/
      * Yahoo Finance: https://finance.yahoo.com/
    
-   * Books (note: these are affiliate links to Amazon):
-     * [Unknown Market Wizards (latest edition)](https://amzn.to/3PJLADW)
-     * [The Man Who Solved the Market](https://amzn.to/3TYKruy)
-     * [The Tao of Trading: How to Build Abundant Wealth in Any Market Condition](https://amzn.to/3TYM5MN)
+   * Books:
+     * [The Trading Game: A Confession](https://www.amazon.co.uk/Trading-Game-Confession-Gary-Stevenson/dp/0241636604)
+     * [Unknown Market Wizards (latest edition)](https://www.amazon.co.uk/dp/B0BW1163DW)
+     * [The Man Who Solved the Market](https://www.amazon.co.uk/dp/073521798X)
+     * [The Tao of Trading: How to Build Abundant Wealth in Any Market Condition](https://www.amazon.co.uk/dp/B08BNGKKM5)
 
 
 ### Self-paced mode
