@@ -5,6 +5,8 @@ from scripts.train import TrainModel
 import pandas as pd
 import warnings
 
+from datetime import datetime  # Import the datetime module
+
 
 def main():
 
@@ -79,9 +81,19 @@ def main():
   pd.set_option('display.max_rows', None)
   pd.set_option('display.max_columns', None)
   pd.set_option('display.max_colwidth', None)
+  
+  print('Top 3 predictions every day:')
+  print(trained.df_full[trained.df_full[f'{prediction_name}_rank']<=3].sort_values(by=["Date",f'{prediction_name}_rank']).tail(10)[COLUMNS])
 
-  print(trained.df_full[trained.df_full[f'{prediction_name}_rank']<=2].sort_values(by=["Date",f'{prediction_name}_rank']).tail(10)[COLUMNS])
 
+  print('Bottom 3 predictions every day:')
+  max_date = trained.df_full.Date.max()
+  count_predictions = trained.df_full[trained.df_full.Date==max_date].Ticker.nunique()
+  print(trained.df_full[trained.df_full[f'{prediction_name}_rank']>=count_predictions-2].sort_values(by=["Date",f'{prediction_name}_rank']).tail(10)[COLUMNS])
+
+
+  current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M")
+  print(f"Current date and time: {current_datetime}")
 
 if __name__ == "__main__":
   main()
