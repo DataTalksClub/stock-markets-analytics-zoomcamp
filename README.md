@@ -27,15 +27,20 @@
 
 ## Taking the course
 
-### 2024 Cohort
+### 2025 Cohort
 
-* **Start**: 15 April 2024 (Monday) at 17:00 GMT
-* **Registration Form**: [LINK](https://docs.google.com/forms/d/e/1FAIpQLSc5H6Jc-HJg9B7irveRASJCAS4BTnJcvM2QX2ykIGZ0UNgCPQ/viewform)
-* [Cohort folder](cohorts/2024/) with homeworks and deadlines
+* **Start**: 19 May 2025 (Monday) at 17:00 GMT
+* **Registration Form**: [LINK](https://forms.gle/qP19FoBSnzmZsJYt6)
+* [Cohort folder](cohorts/2025/) with homeworks and deadlines
 
-* **Pre-Launch stream with course overview and Q&A (streamed on 25th March 2024)**:
-  * [![YouTube video](https://markdown-videos-api.jorgenkh.no/youtube/oswTLnjkRUg)](https://www.youtube.com/watch?v=oswTLnjkRUg&list=PLSWnIAnueyu8auG0v3VXfUkVJpLoeCJYF&index=1)
-  * [Slides](https://docs.google.com/presentation/d/e/2PACX-1vSV8yZ6edMcJGvVuPWJxfict7pDI1YG8Ddbef7wRfnSEz_Q-59LUr60fcvYChF5dg-sSKzGkYQUPyif/pub?start=false&loop=false&delayms=3000&slide=id.g1d0e930b61f_0_81)
+* **Pre-Launch stream with course overview and Q&A (will be streamed on 14th April 2025)**:
+  * [Registration Link](https://lu.ma/tdo1zrif)
+
+* **Workshops to help you prepare for the course**
+  * [![Economics and Automation Workshop: Building a Data Pipeline for Economic Insights ](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DMeDUe75WQaQ)](https://www.youtube.com/watch?v=MeDUe75WQaQ)
+
+
+  * [![Predicting Financial Time-Series](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DPxAh08Pcmj4)](https://www.youtube.com/watch?v=PxAh08Pcmj4)
 
 
 * **Supplementary pre-read for the project selection:**
@@ -52,6 +57,20 @@
      * [Unknown Market Wizards (latest edition)](https://www.amazon.co.uk/dp/B0BW1163DW)
      * [The Man Who Solved the Market](https://www.amazon.co.uk/dp/073521798X)
      * [The Tao of Trading: How to Build Abundant Wealth in Any Market Condition](https://www.amazon.co.uk/dp/B08BNGKKM5)
+     * [The Unlucky Investor's Guide to Options Trading](https://www.amazon.co.uk/Unlucky-Investor%E2%80%B2s-Guide-Options-Trading/dp/1119882656)
+
+---
+### 2024 Cohort
+
+* **Start**: 15 April 2024 (Monday) at 17:00 GMT
+* **Registration Form** (not accepting responses anymore): [LINK](https://docs.google.com/forms/d/e/1FAIpQLSc5H6Jc-HJg9B7irveRASJCAS4BTnJcvM2QX2ykIGZ0UNgCPQ/viewform)
+* [Cohort folder](cohorts/2024/) with homeworks and deadlines
+
+* **Pre-Launch stream with course overview and Q&A (streamed on 25th March 2024)**:
+  * [![YouTube video](https://markdown-videos-api.jorgenkh.no/youtube/oswTLnjkRUg)](https://www.youtube.com/watch?v=oswTLnjkRUg&list=PLSWnIAnueyu8auG0v3VXfUkVJpLoeCJYF&index=1)
+  * [Slides](https://docs.google.com/presentation/d/e/2PACX-1vSV8yZ6edMcJGvVuPWJxfict7pDI1YG8Ddbef7wRfnSEz_Q-59LUr60fcvYChF5dg-sSKzGkYQUPyif/pub?start=false&loop=false&delayms=3000&slide=id.g1d0e930b61f_0_81)
+---
+
 
 
 ### Self-paced mode
