@@ -1,5 +1,18 @@
 # Introduction and Data Sources
 
+## 2025
+- Youtube Recording (to be streamed on May 19th 2025)<br>
+
+- [Slides (2025)](https://docs.google.com/presentation/d/e/2PACX-1vR_vfIYCpGhgsR_jef9uo5YdKbg68LGO6pZR5kRSrxDTHNRujKgPb7r9K1U1SM9yOFJlC7OoDAAjKHG/pub?start=false&loop=false&delayms=10000)
+
+- [Code in Colab (2025)](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/01-intro-and-data-sources/%5B2025%5D_Module_01_Colab_Introduction_and_Data_Sources.ipynb)
+
+- **Home assignment (homework1)** can be found in the [Cohorts](../cohorts/) folder (for the respective year). You will find the submission link and the deadlines there.
+
+---
+
+## 2024
+
 - Youtube Recording of the livestream on April 15th 2024 <br>
 [![Youtube Recording](https://markdown-videos-api.jorgenkh.no/youtube/O9XpN41cHmE)](https://www.youtube.com/watch?v=O9XpN41cHmE)
 
@@ -7,4 +20,4 @@
 
 - [Code in Colab](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/01-intro-and-data-sources/Module01_Colab_Introduction_and_Data_Sources.ipynb)
 
-- **Home assignment (homework1)** can be found in the [Cohorts](../cohorts/) folder (for the respective year). You will find the submission link and the deadlines there too.
+- **Home assignment (homework1)** can be found in the [Cohorts](../cohorts/) folder (for the respective year). You will find the submission link and the deadlines there.
