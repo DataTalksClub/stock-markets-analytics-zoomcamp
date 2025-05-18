@@ -29,12 +29,14 @@
 
 ### 2025 Cohort
 
-* **Start**: 19 May 2025 (Monday) at 17:00 GMT
+* **Start**: 19 May 2025 (Monday) at 17:30 GMT
+* **LiveStream**: all modules will be streamed on the PythonInvest YouTube Channel: [2025 Stock Market Analytics Zoomcamp Playlist](https://www.youtube.com/playlist?list=PLSWnIAnueyu8KBcwhE48ASp20nZMg2qtt)
 * **Registration Form**: [LINK](https://forms.gle/qP19FoBSnzmZsJYt6)
 * [Cohort folder](cohorts/2025/) with homeworks and deadlines
 
-* **Pre-Launch stream with course overview and Q&A (will be streamed on 14th April 2025)**:
-  * [Registration Link](https://lu.ma/tdo1zrif)
+* **Pre-Launch stream with course overview and Q&A (streamed on April, 14th 2025)**:
+  * [![[Pre-Launch and Q&A] Stock Market Analytics Zoomcamp 2025](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1N1jIwa1uag)](https://www.youtube.com/watch?v=1N1jIwa1uag)
+
 
 * **Workshops to help you prepare for the course**
   * [![Economics and Automation Workshop: Building a Data Pipeline for Economic Insights ](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DMeDUe75WQaQ)](https://www.youtube.com/watch?v=MeDUe75WQaQ)
