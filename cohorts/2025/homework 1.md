@@ -89,7 +89,7 @@ Steps:
 1. Load earnings data from CSV ([ha1_Amazon.csv](ha1_Amazon.csv)) containing earnings dates, EPS estimates, and actual EPS
 2. Download complete historical price data using yfinance
 3. Calculate 2-day percentage changes for all historical dates: for each sequence of 3 consecutive trading days (Day 1, Day 2, Day 3), compute the return as Close_Day3 / Close_Day1 - 1. (Assume Day 2 may correspond to the earnings announcement.)
-4. Identify positive earnings surprises (where actual EPS > estimated EPS)
+4. Identify positive earnings surprises (where "actual EPS > estimated EPS" OR "Surprise (%)>0")
 5. Calculate 2-day percentage changes following positive earnings surprises
 6. Compare the median 2-day percentage change for positive surprises vs. all historical dates
 
