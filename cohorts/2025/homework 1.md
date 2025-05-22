@@ -8,9 +8,13 @@ In this homework, we're going to download finance data from various sources and 
 **Which year had the highest number of additions?**
 
 Using the list of S&P 500 companies from Wikipedia's [S&P 500 companies page](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies), download the data including the year each company was added to the index.
-* Create a DataFrame with company tickers, names, and the year they were added.
-* Extract the year from the addition date and calculate the number of stocks added each year.
-* Which year had the highest number of additions (1957 doesn't count, as it was the year when the S&P 500 index was founded)? Write down this year as your answer (the most recent one, if you have several records).
+
+Hint: you can use [pandas.read_html](https://pandas.pydata.org/docs/reference/api/pandas.read_html.html) to scrape the data into a DataFrame.
+
+Steps:
+1. Create a DataFrame with company tickers, names, and the year they were added.
+2. Extract the year from the addition date and calculate the number of stocks added each year.
+3. Which year had the highest number of additions (1957 doesn't count, as it was the year when the S&P 500 index was founded)? Write down this year as your answer (the most recent one, if you have several records).
 
 *Context*: 
 > "Following the announcement, all four new entrants saw their stock prices rise in extended trading on Friday" - recent examples of S&P 500 additions include DASH, WSM, EXE, TKO in 2025 ([Nasdaq article](https://www.nasdaq.com/articles/sp-500-reshuffle-dash-tko-expe-wsm-join-worth-buying)).
