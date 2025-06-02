@@ -93,7 +93,7 @@ Steps:
 1. Load earnings data from CSV ([ha1_Amazon.csv](ha1_Amazon.csv)) containing earnings dates, EPS estimates, and actual EPS. Make sure you are using the correct delimiter to read the data, such as in this command ```python pandas.read_csv("ha1_Amazon.csv", delimiter=';') ```
 2. Download complete historical price data using yfinance
 3. Calculate 2-day percentage changes for all historical dates: for each sequence of 3 consecutive trading days (Day 1, Day 2, Day 3), compute the *return* as Close_Day3 / Close_Day1 - 1. (Assume Day 2 may correspond to the earnings announcement.)
-4. Identify positive earnings surprises (where "actual EPS > estimated EPS" OR "Surprise (%)>0")
+4. Identify positive earnings surprises (where "actual EPS > estimated EPS"). Both fields should be present in the file. You should obtain 36 data points for use in the descriptive analysis (median) later. 
 5. Calculate 2-day percentage changes following positive earnings surprises. Show your answer in % (closest number to the 2nd digit): *return* * 100.0
 6. (Optional) Compare the median 2-day percentage change for positive surprises vs. all historical dates. Do you see the difference?
 
