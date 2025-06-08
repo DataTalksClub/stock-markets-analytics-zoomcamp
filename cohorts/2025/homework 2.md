@@ -20,6 +20,9 @@ From the withdrawn IPO list ([stockanalysis.com/ipos/withdrawn](https://stockana
    - “Holdings” → `Holdings`
    - “Ltd” or “Limited” → `Ltd`
    - Others → `Other`
+
+  * Hint: make your function more robust by converting names to lowercase and splitting into words before matching patterns.
+
 3. Define a new field `Avg. price` by parsing the `Price Range` field (create a function and apply it to the `Price Range` column). Examples:
    - '$8.00-$10.00' → `9.0`  
    - '$5.00' → `5.0`  
