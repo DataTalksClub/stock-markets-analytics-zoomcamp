@@ -7,7 +7,7 @@ If not stated otherwise, please use the [LINK](https://github.com/DataTalksClub/
 ---
 ### Question 1: [IPO] Withdrawn IPOs by Company Type
 
-**Which company class had the highest total IPO withdrawal value (in $ millions)?**
+**What is the total withdrawn IPO value (in $ millions) for the company class with the highest total withdrawal value?**
 
 From the withdrawn IPO list ([stockanalysis.com/ipos/withdrawn](https://stockanalysis.com/ipos/withdrawn/)), collect and process the data to find out which company type saw the most withdrawn IPO value.
 
