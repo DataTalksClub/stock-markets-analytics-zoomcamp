@@ -75,12 +75,47 @@ The goal is to replicate the large-scale `yfinance` OHLCV data download and perf
    - [Additional] Do you observe the **same top 10 companies** when sorting by `growth_252d` versus sorting by `Sharpe`?
 
 ---
-### Question 3: tbd?
+### Question 3: [IPO] ‘Fixed Months Holding Strategy’
 
-**Q3 tbd?**
+**What is the optimal number of months (1 to 12) to hold a newly IPO'd stock in order to maximize average growth?**  
+(*Assume you buy at the close of the first trading day and sell after a fixed number of trading days.*)
 
 
-text_tbd
+---
+
+#### Goal:
+Investigate whether holding an IPO stock for a fixed number of months after its first trading day produces better returns, using future growth columns.
+
+---
+
+#### Steps:
+
+1. **Start from the existing DataFrame** from Question 2 (75 tickers from IPOs in the first 5 months of 2024).  
+
+   Add **12 new columns**:  
+   `future_growth_1m`, `future_growth_2m`, ..., `future_growth_12m`  
+   *(Assume 1 month = 21 trading days, so growth is calculated over 21, 42, ..., 252 trading days)*  
+   This logic is similar to `historyPrices['growth_future_30d']` from **Code Snippet 7**, but extended to longer timeframes.
+
+2. **Determine the first trading day** (`min_date`) for each ticker.  
+   This is the earliest date in the data for each stock.
+
+3. **Join the data**:  
+   Perform an **inner join** between the `min_date` DataFrame and the future growth data on both `ticker` and `date`.  
+   ➤ You should end up with **75 records** (one per IPO) with all 12 `future_growth_...` fields populated.
+
+4. **Compute descriptive statistics** for the resulting DataFrame:  
+   Use `.describe()` or similar to analyze each of the 12 columns:  
+   - `future_growth_1m`  
+   - `future_growth_2m`  
+   - ...  
+   - `future_growth_12m`  
+
+5. **Determine the best holding period**:  
+   - Find the number of months **(1 to 12)** where the **average (mean)** future growth is **maximal**.  
+   - This optimal month shows an uplift of **>1%** compared to all others.  
+   - Still, the average return remains **less than 1** (i.e., expected return is less than doubling your investment).
+
 
 ---
 ### Question 4: tnd
