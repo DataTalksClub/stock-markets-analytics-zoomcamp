@@ -18,9 +18,11 @@ From the withdrawn IPO list ([stockanalysis.com/ipos/withdrawn](https://stockana
    - “Acquisition Corp” or “Acquisition Corporation” → `Acq.Corp`
    - “Inc” or “Incorporated” → `Inc`
    - “Group” → `Group`
+   - “Ltd” or “Limited” → `Limited`
    - “Holdings” → `Holdings`
-   - “Ltd” or “Limited” → `Ltd`
    - Others → `Other`
+
+  *  Order: Please follow the listed order of classes and assign the first matched value (e.g., for 'shenni holdings limited', you assign the 'Limited' class).
 
   * Hint: make your function more robust by converting names to lowercase and splitting into words before matching patterns.
 
