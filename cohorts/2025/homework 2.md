@@ -144,7 +144,8 @@ Apply a simple rule-based trading strategy using the **Relative Strength Index (
    - Focus on getting **RSI** computed using **Code Snippets 8 and 9**.  
    - This process is essential and will help during the capstone project.
 
-2. **Alternative (if tech indicators fail to generate):**  
+2. ⚠️ **IMPORTANT** Please use this file to solve the Home Assignment (**all next steps**)
+ 
    Download precomputed data using this snippet:
 
    ```python
