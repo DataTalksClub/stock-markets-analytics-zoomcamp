@@ -1,5 +1,19 @@
 # Modeling for Time Series
 
+## 2025
+- Youtube Recording of the livestream on June 16th 2025 
+[![[Stock Market Analytics Zoomcamp 2025] Module 3 "Time Series Modeling"](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D5YJLWTgNLaA)](https://www.youtube.com/watch?v=5YJLWTgNLaA)
+
+
+- Slides (2025) (tbd)
+
+- Code in Colab (2025) (tbd)
+
+- **Home assignment (homework 3)** can be found in the [Cohorts](../cohorts/) folder (for the respective year). You will find the submission link and the deadlines there.
+---
+
+## 2024
+
 - Youtube Recording of the livestream on May 10th 2024 <br>
   [![Youtube Recording](https://markdown-videos-api.jorgenkh.no/youtube/_dm2G9CbDTM)](https://www.youtube.com/watch?v=_dm2G9CbDTM)
 
