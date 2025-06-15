@@ -1,7 +1,8 @@
 # Working with Data In Pandas
 
 ## 2025
-- Youtube Recording (to be streamed on June 2nd 2025)<br>
+- Youtube Recording of the livestream on June 2th 2025 
+[![[Stock Market Analytics Zoomcamp 2025] Module 2 "Working with Data In Pandas"](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DyRpf0D5SGIE)](https://www.youtube.com/watch?v=yRpf0D5SGIE)
 
 - [Slides (2025)](https://docs.google.com/presentation/d/e/2PACX-1vT5q3cUtbQjFwe8oPzhbBbMQUmVpfkjQmJvrGsMwEcdUVHpyu2eaI9aKJu_1xcgSsloG2hthp-dNHZ8/pub?start=false&loop=false&delayms=10000)
 
