@@ -10,7 +10,7 @@
 - Register in [DataTalks.Club's Slack](https://datatalks.club/slack.html)
 - Join the [`#course-stocks-analytics-zoomcamp`](https://datatalks-club.slack.com/archives/C06L1RTF10F) channel
 - Join the [course Telegram channel with announcements](https://t.me/stockanalyticszoomcamp)
-- The videos are published on [PythonInvest's YouTube channel](https://www.youtube.com/@pythoninvest2480) 
+- The videos are published on [PythonInvest's YouTube channel](https://www.youtube.com/@pythoninvest) 
 - [Frequently asked technical questions](https://docs.google.com/document/d/1ABQD6ns4vZHKu2dHGqqJ85LCOF7LzxqfvWBVXb_-M9E/edit?usp=sharing)
 
 
