@@ -60,6 +60,12 @@ The goal is to replicate the large-scale `yfinance` OHLCV data download and perf
 
    ```python
    stocks_df['Sharpe'] = (stocks_df['growth_252d'] - 0.045) / stocks_df['volatility']
+   ```
+
+   ⚠️ **IMPORTANT** Please use the original version of annualized volatility calculation (it was later corrected to another formula):
+   ```python
+   stocks_df['volatility'] =   stocks_df['Close'].rolling(30).std() * np.sqrt(252)
+   ```
 4. Filter the DataFrame to keep data only for the trading day:  
    **‘2025-06-06’**
 
