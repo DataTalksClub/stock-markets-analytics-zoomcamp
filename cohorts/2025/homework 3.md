@@ -63,12 +63,14 @@ In this task, you'll apply insights from the **visualized decision tree (`clf10`
 1. **Define two new 'hand' rules** based on branches that lead to 'positive' predictions in the tree:
    - `pred3_manual_dgs10_5`:  
      ```python
-     (DGS10 <= 4.825) & (DGS5 <= 0.745)
+     (DGS10 <= 4) & (DGS5 <= 1)
      ```
    - `pred4_manual_dgs10_fedfunds`:  
      ```python
-     (DGS10 > 4.825) & (FEDFUNDS <= 4.795)
+     (DGS10 > 4) & (FEDFUNDS <= 4.795)
      ```
+   > **Hint**: This is not exactly the same condition as in the estimated tree (original: `(DGS10 <= 4.825) & (DGS5 <= 0.745)`; `(DGS10 > 4.825) & (FEDFUNDS <= 4.795)`), since in that case, there are no true positive predictions for both variables. Consider why this might be the case.
+
 
 2. **Extend Code Snippet 3** (Manual "hand rule" predictions):  
    - Implement and apply the above two rules (`pred3`, `pred4`) to your dataset.
@@ -79,6 +81,7 @@ In this task, you'll apply insights from the **visualized decision tree (`clf10`
    - Use standard precision metrics (`TP / (TP + FP)`).
    - Round the precision score to **three decimal places**.  
      Example: If your result is `0.57897`, your final answer should be: `0.579`.
+  > **Hint**: This should already be visible in the code output, as the `IS_CORRECT` and `PREDICTIONS` sets should automatically include the new columns.
 
 
 
