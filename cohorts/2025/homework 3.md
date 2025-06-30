@@ -103,6 +103,9 @@ clf = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
 - Fit the classifier on the combined TRAIN and VALIDATION datasets.
 - Use the trained model to predict on the entire dataset (TRAIN + VALIDATION + TEST).
 - Store these predictions in a new column named `pred5_clf_10` within your main dataframe.
+- **Hint**: When predicting on the entire dataset, it's easy to join the predictions with the full DataFrame, since the number of records and their order remain the same. You will need to define X_all and y_all and apply the same cleaning steps used previously for X_train, y_train, X_test, and y_test. This makes it straightforward to define a new column, for example:  
+  ```python
+  df['pred5_clf_10'] = <predictions vector from clf10.predict(X_all)>
 
 #### Step 2: Identify Unique Correct Predictions by `pred5_clf_10`
 
