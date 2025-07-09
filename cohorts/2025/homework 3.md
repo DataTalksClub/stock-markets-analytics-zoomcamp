@@ -1,6 +1,13 @@
 ## Module 3 Homework (2025 Cohort)
 
-In this homework, we're going to work with categorical variables, first ML models (Decision Trees), and hyperparameter tuning.
+In this homework, we’ll work with categorical variables, build our first machine learning models (Decision Trees), and perform hyperparameter tuning.
+
+💡 Your goal is to read through the provided code and make slight extensions. Specifically:
+- Add more columns to the dataframe.
+- Define new “handcrafted” rules to predict growth.
+- Analyze whether the ML model produces **unique** predictions (i.e., cases where only the ML model is correct compared to other “hand” rules).
+- Tune the Decision Tree by optimizing its complexity (i.e., the **depth** hyperparameter).
+
 
 Please use the [Colab Module 3](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/03-modeling/%5B2025%5D_Module_3_Colab_Time_Series_Modeling.ipynb) for all tasks to ensure you have the same dataframe used for the Modeling part, as covered during the lecture. 
 
