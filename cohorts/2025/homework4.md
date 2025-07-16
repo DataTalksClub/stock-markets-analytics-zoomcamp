@@ -104,9 +104,18 @@ However, now you're optimizing not just for ML performance (like precision), but
 
 ---
 ### Question 3: Predicting Strong Future Growth
-**tbd question**
 
-tbd
+**What is the CAGR for the best predictor of strong future growth (after redefining the target variable)?**
+
+Your goal is to adjust how we define “strong future growth” and examine how it affects model performance.
+
+1. Look at the distribution of `growth_future_30d` and `is_positive_growth_30d_future`. You’ll see that the median for  `growth_future_30d` is around 1.02 (2%), and the top 25% starts at about 1.08 (8%). The current version of `is_positive_growth_30d_future` has about 60% of records labeled as class 1 (when defined as 1 when `growth_future_30d`>1)
+
+2. Redefine `is_positive_growth_30d_future` to equal 1, if `growth_future_30d >= 1.08`; otherwise, 0. This definition will be used for all future predictions. With this new version, only about 27% of records will be labeled as class 1..
+
+3. Run the notebook again using this revised target. Threshold-based rules may not perform as well, so check which predictor now delivers the best financial result (CAGR)—it is likely to be  `pred5_clf_10`.
+
+**Write down the CAGR for the best predictor. Were you able to improve it compared to the original best CAGR of 1.1556? Do you see more or fewer trades per day compared to before?**
 
 ---
 ### Question 4:  [EXPLORATORY] Describe Your Ideal Trading Strategy
