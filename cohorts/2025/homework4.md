@@ -46,6 +46,7 @@ However, now you're optimizing not just for ML performance (like precision), but
 
 ### Steps
 
+0. Make **a fresh copy** of the Module 04 notebook.
 1. **Comment out the scaler in preprocessing**
 
    The `StandardScaler` was originally used for Logistic Regression and never removed. Since Random Forest doesn't need feature scaling, the scaler biases its output.  
@@ -108,6 +109,8 @@ However, now you're optimizing not just for ML performance (like precision), but
 **What is the CAGR for the best predictor of strong future growth (after redefining the target variable)?**
 
 Your goal is to adjust how we define “strong future growth” and examine how it affects model performance.
+
+0. Make **a fresh copy** of the Module 04 notebook.
 
 1. Look at the distribution of `growth_future_30d` and `is_positive_growth_30d_future`. You’ll see that the median for  `growth_future_30d` is around 1.02 (2%), and the top 25% starts at about 1.08 (8%). The current version of `is_positive_growth_30d_future` has about 60% of records labeled as class 1 (when defined as 1 when `growth_future_30d`>1)
 
