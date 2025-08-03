@@ -12,13 +12,7 @@ import pandas_datareader as pdr
 
 # https://companiesmarketcap.com/usa/largest-companies-in-the-usa-by-market-cap/
 
-# BEFORE 3-Sep-2024
-US_STOCKS = ['MSFT', 'AAPL', 'GOOG', 'NVDA', 'AMZN', 'META', 'BRK-B', 'LLY', 'AVGO','V', 'JPM','TSLA',
-             'WMT','XOM', 'UNH', 'MA','PG', 'ORCL', 'COST', 'JNJ', 'HD', 'MRK', 'BAC', 'ABBV', 'CVX',
-             'NFLX', 'KO', 'AMD', 'ADBE', 'CRM', 'PEP', 'QCOM', 'TMO', 'TMUS', 'WFC', 'CSCO', 'AMAT', 'DHR',
-             'MCD','DIS', 'ABT', 'TXN', 'GE', ' INTU', 'VZ', 'AMGN', 'AXP', 'CAT', 'IBM', 'PFE', 'PM', 'MS']
-
-# 3-Sep-2024: top-190 US stocks with >$50b market cap
+# 2025 Update: top-190 US stocks with >$50b market cap
 US_STOCKS = [
     "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "META", "BRK-B", "LLY", "AVGO", "TSLA",
     "JPM", "WMT", "UNH", "V", "XOM", "MA", "PG", "JNJ", "COST", "ORCL", "HD", "ABBV",
@@ -30,7 +24,7 @@ US_STOCKS = [
     "SCHW", "C", "PANW", "MMC", "ADP", "KKR", "UPS", "ADI", "AMT", "SBUX", "DE",
     "ANET", "BMY", "HCA", "CI", "KLAC", "FI", "LRCX", "BX", "GILD", "MU", "BA", "SO",
     "MDLZ", "ICE", "MO", "SHW", "DUK", "MCO", "CL", "INTC", "WM", "ZTS", "GD", "CTAS",
-    "EQIX", "DELL", "NOC", "CME", "SCCO", "TDG", "SNPS", "APH", "WELL", "MCK", "PH",
+    "EQIX", "DELL", "NOC", "CME", "SCCO", "TDG", "SNYS", "APH", "WELL", "MCK", "PH",
     "PYPL", "ITW", "MSI", "PNC", "ABNB", "CMG", "USB", "CVS", "MMM", "FDX", "EOG",
     "ECL", "BDX", "CDNS", "TGT", "WDAY", "PLTR", "CSX", "ORLY", "CRWD", "MAR", "RSG",
     "AJG", "APO", "CARR", "EPD", "SPG", "APD", "AFL", "MRVL", "PSA", "DHI", "NEM",
@@ -38,7 +32,6 @@ US_STOCKS = [
     "COF", "WMB", "ET", "IBKR", "GM", "MET", "O", "AEP", "OKE", "AZO", "HLT", "GEV",
     "SRE", "PCG", "DASH", "TRV", "CPRT", "OXY", "ROST", "KDP", "ALL", "BK", "DLR"
 ]
-
 
 # https://companiesmarketcap.com/european-union/largest-companies-in-the-eu-by-market-cap/
 EU_STOCKS = [] # 3-Sep-2024 : Remove EU stocks
@@ -55,7 +48,7 @@ class DataRepository:
   macro_df: pd.DataFrame
 
   min_date: str
-  ALL_TICKERS: list[str] = US_STOCKS  + EU_STOCKS + INDIA_STOCKS
+  ALL_TICKERS: list[str] = US_STOCKS + EU_STOCKS + INDIA_STOCKS  # All 190 US stocks
 
   def __init__(self):
     self.ticker_df = None
@@ -65,9 +58,78 @@ class DataRepository:
   def _get_growth_df(self, df:pd.DataFrame, prefix:str)->pd.DataFrame:
     '''Help function to produce a df with growth columns'''
     for i in [1,3,7,30,90,365]:
-      df['growth_'+prefix+'_'+str(i)+'d'] = df['Adj Close'] / df['Adj Close'].shift(i)
+      df['growth_'+prefix+'_'+str(i)+'d'] = df['Close'] / df['Close'].shift(i)
       GROWTH_KEYS = [k for k in df.keys() if k.startswith('growth')]
     return df[GROWTH_KEYS]
+  
+  def _fetch_index_with_fallback(self, yf_symbol, stooq_symbol, name, min_date, fred_symbol=None):
+    '''Fetch index data with yfinance first, Stooq second, FRED third fallback for REAL data'''
+    data = None
+    
+    # First try: yfinance
+    try:
+      ticker_obj = yf.Ticker(yf_symbol)
+      data = ticker_obj.history(start=min_date, interval="1d")
+      
+      if not data.empty:
+        print(f"yfinance SUCCESS: Got {len(data)} rows for {name}")
+        data.index = pd.to_datetime(data.index)
+      else:
+        print(f"yfinance returned no data for {name}")
+        
+    except Exception as e:
+      print(f"yfinance error for {name}: {e}")
+    
+    # Second fallback: If yfinance failed or returned no data, try Stooq for REAL data
+    if data is None or data.empty:
+      try:
+        print(f"Trying Stooq fallback for {name}...")
+        data = pdr.get_data_stooq(stooq_symbol, start=min_date)
+        
+        # Stooq returns data in reverse chronological order, so reverse it
+        data = data.sort_index()
+        data.index = pd.to_datetime(data.index)
+        
+        if not data.empty:
+          print(f"Stooq SUCCESS: Got {len(data)} rows of REAL data for {name}")
+        else:
+          print(f"Stooq also returned no data for {name}")
+          
+      except Exception as e:
+        print(f"Stooq fallback error for {name}: {e}")
+    
+    # Third fallback: If both yfinance and Stooq failed, try FRED for REAL data
+    if (data is None or data.empty) and fred_symbol:
+      try:
+        print(f"Trying FRED fallback for {name}...")
+        fred_data = pdr.get_data_fred(fred_symbol, start=min_date)
+        
+        if not fred_data.empty:
+          # Convert FRED data to OHLCV format (FRED only has Close prices)
+          data = pd.DataFrame(index=fred_data.index)
+          data['Close'] = fred_data.iloc[:, 0]  # FRED data is single column
+          data['Open'] = data['Close']  # Use Close as Open for FRED data
+          data['High'] = data['Close']  # Use Close as High for FRED data  
+          data['Low'] = data['Close']   # Use Close as Low for FRED data
+          data['Volume'] = 0            # FRED doesn't have volume data
+          data.index = pd.to_datetime(data.index)
+          
+          print(f"FRED SUCCESS: Got {len(data)} rows of REAL data for {name}")
+        else:
+          print(f"FRED also returned no data for {name}")
+          
+      except Exception as e:
+        print(f"FRED fallback error for {name}: {e}")
+    
+    # If still no data, create empty DataFrame with proper structure
+    if data is None or data.empty:
+      print(f"No data available for {name} from any source, creating empty DataFrame")
+      data = pd.DataFrame(columns=['Open', 'High', 'Low', 'Close', 'Volume'])
+      data.index = pd.DatetimeIndex([])
+    
+    # Sleep to avoid overloading APIs
+    time.sleep(1)
+    return data
     
   def fetch(self, min_date = None):
     '''Fetch all data from APIs'''
@@ -80,22 +142,62 @@ class DataRepository:
     self.fetch_macro(min_date=min_date)
   
   def fetch_tickers(self, min_date=None):
-    '''Fetch Tickers data from the Yfinance API'''
+    '''Fetch Tickers data from yfinance API with Stooq fallback for REAL data'''
     if min_date is None:
-      min_date = "1970-01-01"
-    else:
+      # Use a more recent start date to avoid too much historical data
+      min_date = "2022-01-01"
+    
+    # Convert to datetime if it's a string
+    if isinstance(min_date, str):
       min_date = pd.to_datetime(min_date)   
 
-    print(f'Going download data for this tickers: {self.ALL_TICKERS[0:3]}')
+    print(f'Going download data for this tickers: {self.ALL_TICKERS}')
     tq = tqdm(self.ALL_TICKERS)
+    
     for i,ticker in enumerate(tq):
       tq.set_description(ticker)
+      historyPrices = None
 
-      # Download stock prices from YFinance
-      historyPrices = yf.download(tickers = ticker,
-                          # period = "max",
-                          start=min_date,
-                          interval = "1d")
+      # First try: Use the 2025 colab approach with yfinance
+      try:
+        ticker_obj = yf.Ticker(ticker)
+        historyPrices = ticker_obj.history(start=min_date, interval="1d")
+        
+        if not historyPrices.empty:
+          print(f"yfinance SUCCESS: Got {len(historyPrices)} rows for {ticker}")
+        else:
+          print(f"yfinance returned no data for {ticker}")
+          
+      except Exception as e:
+        print(f"yfinance error for {ticker}: {e}")
+      
+      # Fallback: If yfinance failed or returned no data, try Stooq for REAL data
+      if historyPrices is None or historyPrices.empty:
+        try:
+          print(f"Trying Stooq fallback for {ticker}...")
+          # For US stocks, we need to add .US suffix for Stooq
+          stooq_ticker = f"{ticker}.US"
+          historyPrices = pdr.get_data_stooq(stooq_ticker, start=min_date)
+          
+          # Stooq returns data in reverse chronological order, so reverse it
+          historyPrices = historyPrices.sort_index()
+          
+          if not historyPrices.empty:
+            print(f"Stooq SUCCESS: Got {len(historyPrices)} rows of REAL data for {ticker}")
+          else:
+            print(f"Stooq also returned no data for {ticker}")
+            
+        except Exception as e:
+          print(f"Stooq fallback error for {ticker}: {e}")
+      
+      # Skip if no data from either source
+      if historyPrices is None or historyPrices.empty:
+        print(f"No data available for {ticker} from any source, skipping...")
+        time.sleep(1)
+        continue
+
+      # Ensure index is datetime
+      historyPrices.index = pd.to_datetime(historyPrices.index)
 
       # generate features for historical prices, and what we want to predict
 
@@ -116,21 +218,23 @@ class DataRepository:
 
       # historical returns
       for i in [1,3,7,30,90,365]:
-          historyPrices['growth_'+str(i)+'d'] = historyPrices['Adj Close'] / historyPrices['Adj Close'].shift(i)
-      historyPrices['growth_future_5d'] = historyPrices['Adj Close'].shift(-5) / historyPrices['Adj Close']
+          historyPrices['growth_'+str(i)+'d'] = historyPrices['Close'] / historyPrices['Close'].shift(i)
+      historyPrices['growth_future_30d'] = historyPrices['Close'].shift(-30) / historyPrices['Close']
 
       # Technical indicators
       # SimpleMovingAverage 10 days and 20 days
       historyPrices['SMA10']= historyPrices['Close'].rolling(10).mean()
       historyPrices['SMA20']= historyPrices['Close'].rolling(20).mean()
       historyPrices['growing_moving_average'] = np.where(historyPrices['SMA10'] > historyPrices['SMA20'], 1, 0)
-      historyPrices['high_minus_low_relative'] = (historyPrices.High - historyPrices.Low) / historyPrices['Adj Close']
+      historyPrices['high_minus_low_relative'] = (historyPrices['High'] - historyPrices['Low']) / historyPrices['Close']
 
       # 30d rolling volatility : https://ycharts.com/glossary/terms/rolling_vol_30
-      historyPrices['volatility'] =   historyPrices['Adj Close'].rolling(30).std() * np.sqrt(252)
+      # Calculate daily returns first, then rolling std of returns
+      historyPrices['daily_returns'] = historyPrices['Close'].pct_change()
+      historyPrices['volatility'] = historyPrices['daily_returns'].rolling(30).std() * np.sqrt(252)
 
-      # what we want to predict
-      historyPrices['is_positive_growth_5d_future'] = np.where(historyPrices['growth_future_5d'] > 1, 1, 0)
+      # what we want to predict (2025 update: changed from 5d to 30d)
+      historyPrices['is_positive_growth_30d_future'] = np.where(historyPrices['growth_future_30d'] > 1, 1, 0)
 
       # sleep 1 sec between downloads - not to overload the API server
       time.sleep(1)
@@ -141,101 +245,44 @@ class DataRepository:
         self.ticker_df = pd.concat([self.ticker_df, historyPrices], ignore_index=True)
       
   def fetch_indexes(self, min_date=None):
-    '''Fetch Indexes data from the Yfinance API'''
+    '''Fetch Indexes data from yfinance API with Stooq fallback for REAL data'''
 
     if min_date is None:
-      min_date = "1970-01-01"
-    else:
-      min_date = pd.to_datetime(min_date)   
+      # Use a recent start date for better data availability
+      min_date = "2020-01-01"
     
-    # https://finance.yahoo.com/quote/%5EGDAXI/
-    # DAX PERFORMANCE-INDEX
-    dax_daily = yf.download(tickers = "^GDAXI",
-                        start = min_date,    
-                        # period = "max",
-                        interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
+    min_date = pd.to_datetime(min_date)   
     
-    # https://finance.yahoo.com/quote/%5EGSPC/
-    # SNP - SNP Real Time Price. Currency in USD
-    snp500_daily = yf.download(tickers = "^GSPC",
-                     start = min_date,          
-                    #  period = "max",
-                     interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
+    # Define index mappings: (yfinance_symbol, stooq_symbol, name)
+    index_mappings = [
+        ("^GDAXI", "^DAX", "DAX"),
+        ("^GSPC", "^SPX", "S&P500"),
+        ("^DJI", "^DJI", "Dow Jones"),
+        ("EPI", "EPI", "India ETF"),
+        ("^VIX", "^VIX", "VIX"),
+        ("GC=F", "GC.F", "Gold"),
+        ("CL=F", "CL.F", "WTI Oil"),
+        ("BZ=F", "BZ.F", "Brent Oil"),
+        ("BTC-USD", "BTC.USD", "Bitcoin")
+    ]
     
-    # https://finance.yahoo.com/quote/%5EDJI?.tsrc=fin-srch
-    # Dow Jones Industrial Average
-    dji_daily = yf.download(tickers = "^DJI",
-                     start = min_date,       
-                    #  period = "max",
-                     interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
-    
-    # https://finance.yahoo.com/quote/EPI/history?p=EPI
-    # WisdomTree India Earnings Fund (EPI) : NYSEArca - Nasdaq Real Time Price (USD)
-    epi_etf_daily = yf.download(tickers = "EPI",
-                     start = min_date,            
-                    #  period = "max",
-                     interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
-    
-    # VIX - Volatility Index
-    # https://finance.yahoo.com/quote/%5EVIX/
-    vix = yf.download(tickers = "^VIX",
-                        start = min_date, 
-                        # period = "max",
-                        interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
-    
-    # GOLD
-    # https://finance.yahoo.com/quote/GC%3DF
-    gold = yf.download(tickers = "GC=F",
-                     start = min_date,   
-                    #  period = "max",
-                     interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
-    
-    # WTI Crude Oil
-    # https://uk.finance.yahoo.com/quote/CL=F/
-    crude_oil = yf.download(tickers = "CL=F",
-                     start = min_date,          
-                    #  period = "max",
-                     interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
-
-    # Brent Oil
-    # WEB: https://uk.finance.yahoo.com/quote/BZ=F/
-    brent_oil = yf.download(tickers = "BZ=F",
-                            start = min_date,
-                            # period = "max",
-                            interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
-
-
-    # BTC_USD
-    # WEB: https://finance.yahoo.com/quote/BTC-USD/
-    btc_usd =  yf.download(tickers = "BTC-USD",
-                           start = min_date,
-                          #  period = "max",
-                           interval = "1d")
-    # sleep 1 sec between downloads - not to overload the API server
-    time.sleep(1)
+    # Fetch each index with fallback (including FRED symbols for missing data)
+    dax_daily = self._fetch_index_with_fallback("^GDAXI", "^DAX", "DAX", min_date)
+    snp500_daily = self._fetch_index_with_fallback("^GSPC", "^SPX", "S&P500", min_date)
+    dji_daily = self._fetch_index_with_fallback("^DJI", "^DJI", "Dow Jones", min_date)
+    epi_etf_daily = self._fetch_index_with_fallback("EPI", "EPI", "India ETF", min_date)
+    vix = self._fetch_index_with_fallback("^VIX", "^VIX", "VIX", min_date, fred_symbol="VIXCLS")
+    gold = self._fetch_index_with_fallback("GC=F", "GC.F", "Gold", min_date)  # No FRED gold data available
+    crude_oil = self._fetch_index_with_fallback("CL=F", "CL.F", "WTI Oil", min_date, fred_symbol="DCOILWTICO")
+    brent_oil = self._fetch_index_with_fallback("BZ=F", "BZ.F", "Brent Oil", min_date, fred_symbol="DCOILBRENTEU")
+    btc_usd = self._fetch_index_with_fallback("BTC-USD", "BTC.USD", "Bitcoin", min_date, fred_symbol="CBBTCUSD")
     
     # Prepare to merge
     dax_daily_to_merge = self._get_growth_df(dax_daily, 'dax')
     snp500_daily_to_merge = self._get_growth_df(snp500_daily, 'snp500')
     dji_daily_to_merge = self._get_growth_df(dji_daily, 'dji')
     epi_etf_daily_to_merge = self._get_growth_df(epi_etf_daily, 'epi')
-    vix_to_merge = vix.rename(columns={'Adj Close':'vix_adj_close'})[['vix_adj_close']]
+    vix_to_merge = vix.rename(columns={'Close':'vix_adj_close'})[['vix_adj_close']]
     gold_to_merge = self._get_growth_df(gold, 'gold')
     crude_oil_to_merge = self._get_growth_df(crude_oil,'wti_oil')
     brent_oil_to_merge = self._get_growth_df(brent_oil,'brent_oil')
@@ -403,20 +450,33 @@ class DataRepository:
     '''Save dataframes to files in a local directory 'dir' '''
     os.makedirs(data_dir, exist_ok=True)
 
-    file_name = 'tickers_df.parquet'
-    if os.path.exists(file_name):
-      os.remove(file_name)
-    self.ticker_df.to_parquet(os.path.join(data_dir,file_name), compression='brotli')
+    # Only save if dataframes exist and are not empty
+    if self.ticker_df is not None and not self.ticker_df.empty:
+      file_name = 'tickers_df.parquet'
+      if os.path.exists(os.path.join(data_dir, file_name)):
+        os.remove(os.path.join(data_dir, file_name))
+      self.ticker_df.to_parquet(os.path.join(data_dir,file_name), compression='brotli')
+      print(f"Saved {len(self.ticker_df)} ticker records")
+    else:
+      print("No ticker data to save")
   
-    file_name = 'indexes_df.parquet'
-    if os.path.exists(file_name):
-      os.remove(file_name)
-    self.indexes_df.to_parquet(os.path.join(data_dir,file_name), compression='brotli')
+    if self.indexes_df is not None and not self.indexes_df.empty:
+      file_name = 'indexes_df.parquet'
+      if os.path.exists(os.path.join(data_dir, file_name)):
+        os.remove(os.path.join(data_dir, file_name))
+      self.indexes_df.to_parquet(os.path.join(data_dir,file_name), compression='brotli')
+      print(f"Saved {len(self.indexes_df)} index records")
+    else:
+      print("No index data to save")
   
-    file_name = 'macro_df.parquet'
-    if os.path.exists(file_name):
-      os.remove(file_name)
-    self.macro_df.to_parquet(os.path.join(data_dir,file_name), compression='brotli')
+    if self.macro_df is not None and not self.macro_df.empty:
+      file_name = 'macro_df.parquet'
+      if os.path.exists(os.path.join(data_dir, file_name)):
+        os.remove(os.path.join(data_dir, file_name))
+      self.macro_df.to_parquet(os.path.join(data_dir,file_name), compression='brotli')
+      print(f"Saved {len(self.macro_df)} macro records")
+    else:
+      print("No macro data to save")
 
   def load(self, data_dir:str):
     """Load files from the local directory"""

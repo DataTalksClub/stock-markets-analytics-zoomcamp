@@ -37,8 +37,11 @@ class TransformData:
     # TaLib needs inputs of a datatype 'Double' 
     self.tickers_df['Volume'] = self.tickers_df['Volume']*1.0
 
-    for key in ['Open','High','Low','Close','Volume','Adj Close']:
-      self.tickers_df.loc[:,key] = self.tickers_df[key].astype('double')
+    # Check which columns are available (Stooq doesn't have 'Adj Close')
+    available_columns = ['Open','High','Low','Close','Volume']
+    for key in available_columns:
+      if key in self.tickers_df.columns:
+        self.tickers_df.loc[:,key] = self.tickers_df[key].astype('double')
 
     merged_df = None
 
@@ -61,10 +64,16 @@ class TransformData:
       df_current_ticker_volume_indicators['Date']= pd.to_datetime(df_current_ticker_volume_indicators['Date'], utc=True)
       df_current_ticker_pattern_indicators['Date']= pd.to_datetime(df_current_ticker_pattern_indicators['Date'], utc=True)
     
+      # Ensure all DataFrames have clean indexes without Date conflicts
+      df_current_ticker_momentum_indicators = df_current_ticker_momentum_indicators.reset_index(drop=True)
+      df_current_ticker_volume_indicators = df_current_ticker_volume_indicators.reset_index(drop=True)
+      df_current_ticker_pattern_indicators = df_current_ticker_pattern_indicators.reset_index(drop=True)
+      current_ticker_df = current_ticker_df.reset_index(drop=True)
+    
      # merge to one df
-      m1 = pd.merge(current_ticker_df, df_current_ticker_momentum_indicators.reset_index(), how = 'left', on = ["Date","Ticker"], validate = "one_to_one")
-      m2 = pd.merge(m1, df_current_ticker_volume_indicators.reset_index(), how = 'left', on = ["Date","Ticker"], validate = "one_to_one")
-      m3 = pd.merge(m2, df_current_ticker_pattern_indicators.reset_index(), how = 'left', on = ["Date","Ticker"], validate = "one_to_one")
+      m1 = pd.merge(current_ticker_df, df_current_ticker_momentum_indicators, how = 'left', on = ["Date","Ticker"], validate = "one_to_one")
+      m2 = pd.merge(m1, df_current_ticker_volume_indicators, how = 'left', on = ["Date","Ticker"], validate = "one_to_one")
+      m3 = pd.merge(m2, df_current_ticker_pattern_indicators, how = 'left', on = ["Date","Ticker"], validate = "one_to_one")
       # m3 = current_ticker_df
 
       if merged_df is None:
@@ -600,4 +609,3 @@ class TransformData:
     """Load files from the local directory"""
     os.makedirs(data_dir, exist_ok=True)      
     self.transformed_df  = pd.read_parquet(os.path.join(data_dir,'transformed_df.parquet'))
-    

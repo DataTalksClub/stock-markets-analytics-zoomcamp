@@ -49,7 +49,7 @@ class TrainModel:
     
   def _define_feature_sets(self):
     self.GROWTH = [g for g in self.transformed_df if (g.find('growth_')==0)&(g.find('future')<0)]
-    self.OHLCV = ['Open','High','Low','Close','Adj Close','Volume']
+    self.OHLCV = ['Open','High','Low','Close','Volume']
     self.CATEGORICAL = ['Month', 'Weekday', 'Ticker', 'ticker_type']
     self.TO_PREDICT = [g for g in self.transformed_df.keys() if (g.find('future')>=0)]
     self.MACRO = ['gdppot_us_yoy', 'gdppot_us_qoq', 'cpi_core_yoy', 'cpi_core_mom', 'FEDFUNDS',
@@ -129,7 +129,7 @@ class TrainModel:
 
     features_list = self.NUMERICAL+ self.DUMMIES
     # What we're trying to predict?
-    to_predict = 'is_positive_growth_5d_future'
+    to_predict = 'is_positive_growth_30d_future'
 
     self.train_df = self.df_full[self.df_full.split.isin(['train'])].copy(deep=True)
     self.valid_df = self.df_full[self.df_full.split.isin(['validation'])].copy(deep=True)
