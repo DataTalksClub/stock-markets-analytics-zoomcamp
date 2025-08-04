@@ -1,5 +1,22 @@
 # Deployment and Automation Module
 
+## 2025
+- Youtube Recording of the livestream on August 4th 2025 
+[![[Stock Market Analytics Zoomcamp 2025] Module 5 "Advanced Trading Simulation and Automation"](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DFA0x_yBfMjM)](https://www.youtube.com/watch?v=FA0x_yBfMjM)
+
+
+- [View the Slides](https://docs.google.com/presentation/d/e/2PACX-1vQbhpwqnfNTvo1Q4jxeWs5UnncPVhMPrro9iy2Y74ObF0NgfRCzPLBeXvs55Xp2vR-2RknrpQSwefXH/pub?start=false&loop=false&delayms=3000)  
+
+
+- [Code in Colab : Module_05_Advanced_Strategies_And_Simulation.ipynb](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/05-deployment-and-automation/%5B2025%5D_Module_05_Advanced_Strategies_And_Simulation.ipynb) 
+  * Please make sure you clone the repo to a local machine and view via Jupyter Notebook 
+  * OR open the notebook from https://colab.research.google.com/ 
+  * (Note: GitHub's UI may truncate the code and the output) 
+
+- **Home assignment (Homework 5)** No Homework Assignment for Module 5
+---
+
+## 2024
 - Youtube Recording of the livestream on June 24th 2024 <br>
 [![Youtube Recording](https://markdown-videos-api.jorgenkh.no/youtube/tk7UoILcJ34)](https://www.youtube.com/watch?v=tk7UoILcJ34)
 
