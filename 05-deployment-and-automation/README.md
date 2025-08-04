@@ -2,6 +2,7 @@
 
 ## 2025
 - Youtube Recording of the livestream on August 4th 2025 
+
 [![[Stock Market Analytics Zoomcamp 2025] Module 5 "Advanced Trading Simulation and Automation"](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DFA0x_yBfMjM)](https://www.youtube.com/watch?v=FA0x_yBfMjM)
 
 
