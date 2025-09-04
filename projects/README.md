@@ -98,7 +98,14 @@ Suggested set of things to include:
 Please submit your projects here before end of day 2025-08-25 (23:59:59 GMT+1)
 https://courses.datatalks.club/sma-zoomcamp-2025/project/project1
 * [2025, Project review attempt 1]
-Please review 3 peers projects between 2025-08-25 (00:00:00 GMT+1) and 2025-08-31 (23:59:59 GMT+1) https://courses.datatalks.club/sma-zoomcamp-2025/project/project1/eval
+Please review 3 peers projects between 2025-08-25 (00:00:00 GMT+1) and 2025-09-03 (23:59:59 GMT+1) https://courses.datatalks.club/sma-zoomcamp-2025/project/project1/eval
+
+### Attempt 2
+* [2025, Project submission attempt 2]
+Please submit your projects here before end of day 2025-09-22 (23:59:59 GMT+1)
+https://courses.datatalks.club/sma-zoomcamp-2025/project/project2
+* [2025, Project review attempt 2]
+Please review 3 peers projects between 2025-09-23 (00:00:00 GMT+1) and 2025-09-29 (23:59:59 GMT+1) https://courses.datatalks.club/sma-zoomcamp-2025/project/project2/eval
 
 ---
 
