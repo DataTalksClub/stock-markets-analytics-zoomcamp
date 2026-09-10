@@ -2,7 +2,6 @@ schema_version: 1
 content_id: dd91fed9-2521-4e31-8e6a-0727e0b3fda1
 slug: sma-zoomcamp
 title: Stock Markets Analytics Zoomcamp
-description_path: SITE.md
 outcome: Apply Python, data analysis, and machine learning to build and evaluate stock market trading strategies.
 repository_url: https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp
 docs_url: https://datatalks.club/docs/courses/stock-markets-analytics-zoomcamp/
