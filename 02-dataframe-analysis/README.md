@@ -1,5 +1,16 @@
 # Working with Data In Pandas
+## 2026
+- Youtube Recording of the livestream on September 14th 2026
 
+[![[Stock Market Analytics Zoomcamp 2026] Module 2 "Working with Data In Pandas"](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DklVocWhpRH0)](https://www.youtube.com/watch?v=klVocWhpRH0)
+
+- [Slides (2026)](https://docs.google.com/presentation/d/e/2PACX-1vSAg8sxgqtto2g_8tH-yywE7pBvDbn1YnSGpicy1bi6YIeG8dbjjdzktKmxBvmuOd3tM-q1lMUj32qq/pub?start=false&loop=false&delayms=3000)
+
+- [Code in Colab (2026)](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/02-dataframe-analysis/%5B2026%5D_Module_02_Colab_Working_with_the_data.ipynb)
+
+- **Home assignment (homework 2)** can be found in the [Cohorts](../cohorts/) folder (for the respective year). You will find the submission link and the deadlines there.
+
+---
 ## 2025
 - Youtube Recording of the livestream on June 2th 2025 
 
