@@ -106,7 +106,7 @@ Apply a simple rule-based trading strategy using the Relative Strength Index (RS
 - Increasing the threshold from 25 (we used last year) to 30 significantly increases the number of trading opportunities (from ~1,568 to 5,206).
 - With an average 30-day return of **1.26%** and a win rate of **55.13%**, the strategy shows consistent, albeit modest, capital growth over the long term.
 
-**Answer:** Based on 5,206 trades, what is the net income earned (in $ thousands)?
+**Answer:** Based on a few thousands of trades, what is the net income earned (in $ thousands)?
 
 ---
 ### Q5. [Exploratory, Optional] Predicting a Positive-Return IPO
