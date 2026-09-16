@@ -5,6 +5,24 @@ title: Stock Markets Analytics Zoomcamp
 outcome: Apply Python, data analysis, and machine learning to build and evaluate stock market trading strategies.
 starting_point: You want to move from looking at market charts to analyzing the underlying data and testing your ideas with Python.
 prerequisites: You can write Python and work with tabular data in notebooks.
+progression:
+  - heading: I can inspect market data, but I cannot test an idea yet
+    description: I want to move from watching charts to asking reproducible questions about market behaviour.
+  - heading: I build a repeatable analytics workflow
+    description: I collect financial data, engineer features, explore signals, and evaluate them with Python and machine learning.
+  - heading: I evaluate a stock-market strategy
+    description: I turn an investment hypothesis into a project with measurable results and a clear account of its limits.
+homework_summaries:
+  - slug: hw01
+    summary: Collect and explore stock-market data sources in Python.
+  - slug: hw02
+    summary: Clean, join, and analyze market data with pandas DataFrames.
+  - slug: hw03
+    summary: Build and evaluate models for financial time-series data.
+  - slug: hw04
+    summary: Turn model signals into a trading strategy and simulate its performance.
+  - slug: hw05
+    summary: Extend the strategy workflow with deployment and daily automation.
 repository_url: https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp
 docs_url: https://datatalks.club/docs/courses/stock-markets-analytics-zoomcamp/
 faq_url: https://datatalks.club/faq/stock-markets-analytics-zoomcamp.html
