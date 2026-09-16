@@ -21,6 +21,8 @@ From the Recently Filed IPO list ([iposcoop.com/ipos-recently-filed](https://www
     - "Ltd" or "Limited" -> Limited
     - "Holdings" or "Holding" -> Holdings
     - Others -> Other
+
+    **Note:** The order of the rules above is important — use the first matching rule. For example, "EUPEC International Group Ltd." will be classified as `Group` (not `Limited`), since the "Group" rule appears before the "Ltd"/"Limited" rule. Also, matches must be exact: "Xinxu Copper Industry Technology Ltd." will be classified as `Limited` (not `Technologies`), because "Technology" does not match the "Technologies" pattern.
 3. **Price Parsing:** Define a new field **Avg_price** by parsing the 'Price Low' and 'Price High' fields. Create a function to extract numeric values (e.g., '$8.00' -> 8.0) and calculate the average between low and high. Handle '-' or missing values as `None`/`NaN`.
 4. **Numeric Conversion:** Convert 'Shares (millions)' and 'Est \$ Vol (millions)' to numeric formats, cleaning currency symbols (\$) and commas where necessary.
 5. **Value Calculation:** Create a new column **Shares_offered_value**:
