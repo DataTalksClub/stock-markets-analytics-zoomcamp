@@ -4,6 +4,13 @@ In this homework, we're going to combine data from various sources to process it
 
 If not stated otherwise, please use the code snippets covered in the livestream to download and process the data.
 
+> **Note on environment differences (Windows / local Jupyter / newer library versions):**
+> The livestream notebook was recorded in Google Colab with a specific set of package versions. If you're running locally (especially on Windows) or with more recent `pandas`/`yfinance`/`pyarrow` versions, you may hit a few friction points that are not related to your logic:
+> - **`yfinance` MultiIndex columns:** recent `yfinance` versions return `MultiIndex` columns even for single-ticker downloads, so something like `df["Close"].iloc[0]` returns a `Series` instead of a scalar, which breaks `float()` calls and arithmetic. Flatten the columns right after each download, e.g. `df.columns = df.columns.get_level_values(0)` (or `df = df.squeeze()` for single-ticker frames), before doing any further processing.
+> - **`pandas.read_html()` on Windows/newer `pandas`+`lxml`:** calling `pandas.read_html(resp.text)` directly on the response text can raise an `OSError` in this combination. Wrap the HTML string in a buffer instead: `pandas.read_html(io.StringIO(resp.text))`. Apply the same fix everywhere you scrape IPO tables from HTML.
+> - **`ArrowKeyError: A type extension with name pandas.period already defined`:** this can happen when calling `.to_parquet()` a second time in the same long-running kernel session — it's a known `pandas`/`pyarrow` extension-registration issue. If you hit it while re-running a cell during debugging, restart the kernel before saving again.
+> - **Different IPO data source:** the livestream/lecture notebook's `get_ipos_by_year()` helper pulls data from `stockanalysis.com`, while **this homework (Q1/Q2) explicitly requires `iposcoop.com`** — a different site with different columns/data. Make sure you're scraping the URLs given in each question below, not the lecture's source.
+
 ---
 ### Question 1: [IPO] Withdrawn IPOs by Company Type
 
