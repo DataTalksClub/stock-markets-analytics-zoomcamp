@@ -128,11 +128,11 @@ clf = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
 
 ### Advanced (Optional)
 
-- To generalize this for many prediction columns (e.g., `pred0` to `pred99`), define a function that can be applied to an entire dataframe row.
+- To generalize this for many prediction columns (e.g., `pred0` to `pred5`), define a function that can be applied to an entire dataframe row.
 - This function should identify whether a specific prediction (`predX`) is uniquely correct (correct while all others are incorrect).
 - This approach avoids hardcoding conditions for each predictor and scales easily.
 - For examples of how to apply functions to rows in pandas, see this helpful resource:  
-  [Pandas apply function to every row](https://sparkbyexamples.com/pandas/pandas-apply-function-to-every-row/)
+  [Pandas apply function to every row](https://medium.com/@amit25173/tips-for-the-pandas-apply-function-to-every-row-e15929325985)
 
 ---
 ### Question 4:  Hyperparameter tuning for a Decision Tree
@@ -176,7 +176,7 @@ Alternatively, you may propose a completely different approach based on your int
 ---
 ## Submitting the solutions
 
-Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2026/homework/hw3
+Form for submitting: https://courses.datatalks.club/sma-zoomcamp-2026/homework/hw03
 
 ---
 ## Leaderboard
