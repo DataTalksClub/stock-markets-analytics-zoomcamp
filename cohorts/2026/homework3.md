@@ -75,7 +75,7 @@ In this task, you'll apply insights from the **visualized decision tree (`clf10`
      ```python
      (DGS10 > 4) & (FEDFUNDS <= 4.795)
      ```
-   > **Hint**: This is not exactly the same condition as in the estimated tree (original: `(DGS10 <= 4.825) & (DGS5 <= 0.745)`; `(DGS10 > 4.825) & (FEDFUNDS <= 4.795)`), since in that case, there are no true positive predictions for both variables. Consider why this might be the case.
+   > **Hint**: This is not exactly the same condition as in the estimated tree (original: `(cpi_core_yoy<=0.023) & (DGS10 <= 1.745)`; `(cpi_core_yoy>0.023) & (FEDFUNDS <= 4.96)`), since the Decision Tree is quite different in 2026 vs. 2025.
 
 
 2. **Extend Code Snippet 3** (Manual "hand rule" predictions):  
