@@ -69,7 +69,7 @@ In this task, you'll apply insights from the **visualized decision tree (`clf10`
 1. **Define two new 'hand' rules** based on branches that lead to 'positive' predictions in the tree:
    - `pred3_manual_dgs10_5`:  
      ```python
-     (DGS10 <= 4) & (DGS5 <= 1)
+     (DGS10 <= 4.5) & (DGS5 <= 4)
      ```
    - `pred4_manual_dgs10_fedfunds`:  
      ```python
@@ -137,13 +137,13 @@ clf = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
 ---
 ### Question 4:  Hyperparameter tuning for a Decision Tree
 
-**What is the optimal tree depth (from 1 to 20) for a DecisionTreeClassifier?**
+**What is the optimal tree depth (from 1 to 12) for a DecisionTreeClassifier?**
 
 **NOTE:** please include `random_state=42` to the Decision Tree Classifier initialization (e.g., `clf = DecisionTreeClassifier(max_depth=max_depth, random_state=42)`) to ensure consistency in results.
 
 ### Instructions:
 
-- Iterate through `max_depth` values from 1 to 20.
+- Iterate through `max_depth` values from 1 to 12.
 - For each `max_depth`:
   - Train a Decision Tree Classifier with the current `max_depth` on the combined TRAIN+VALIDATION dataset.
 - Optionally, visualize how the 'head' (top levels) of each fitted tree changes with increasing tree depth. You can use:
