@@ -94,8 +94,9 @@ In this task, you'll apply insights from the **visualized decision tree (`clf10`
 ---
 ### Question 3: Unique Correct Predictions from a 10-Level Decision Tree Classifier (`pred5_clf_10`)
 
-**What is the total number of records in the TEST dataset where the new prediction `pred5_clf_10` is correct, while all 'hand' rule predictions (`pred0` to `pred4`) are incorrect?**
+**What is the total number of records in the TEST dataset where the new prediction `pred5_clf_10` is a correct Class 1 (positive) prediction, while all 'hand' rule predictions (`pred0` to `pred4`) fail to catch it?**
 
+> **Note:** Since we are optimizing **precision** (a metric defined only for the positive class, `TP / (TP + FP)`), "correct" here means a **true positive** — i.e., the true label `is_positive_growth_30d_future` equals 1 AND the prediction also equals 1. Predictions that correctly identify a *negative* case (true negatives) are not relevant to this analysis and should **not** count as "correct" for this question.
 
 To ensure reproducibility, please include the following parameter in the Decision Tree Classifier:
 ```python
@@ -113,13 +114,14 @@ clf = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
   ```python
   df['pred5_clf_10'] = <predictions vector from clf10.predict(X_all)>
 
-#### Step 2: Identify Unique Correct Predictions by `pred5_clf_10`
+#### Step 2: Identify Unique Correct Class 1 Predictions by `pred5_clf_10`
 
-- Create a new boolean column, `only_pred5_is_correct`, that is `True` only when:
-  - The prediction from `pred5_clf_10` is correct (i.e., matches the true label).
-  - All other hand rule predictions (`pred0` through `pred4`) are incorrect.
+- Restrict attention to actual positive cases: `is_positive_growth_30d_future == 1`. (Rows where the true label is 0 cannot contribute a "correct Class 1 prediction" by any predictor, so they are excluded from this analysis.)
+- Create a new boolean column, `only_pred5_is_correct`, that is `True` only when, for these actual-positive rows:
+  - The prediction from `pred5_clf_10` equals 1 (i.e., it correctly flags the positive case).
+  - All other hand rule predictions (`pred0` through `pred4`) equal 0 (i.e., every hand rule fails to flag this same positive case).
 
-#### Step 3: Count Unique Correct Predictions on the TEST Set
+#### Step 3: Count Unique Correct Class 1 Predictions on the TEST Set
 
 - Convert the `only_pred5_is_correct` column from boolean to integer.
 - Filter the dataframe for records belonging to the TEST dataset.
