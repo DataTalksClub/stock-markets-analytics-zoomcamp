@@ -1,5 +1,18 @@
 # Trading Strategy Simulations for Time Series
 
+## 2026
+- Youtube Recording of the livestream on October 12t 2026 
+
+[![[Stock Market Analytics Zoomcamp 2026] Module 4 "Trading Simulation"](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DJZE3nL_yfcc)](https://www.youtube.com/watch?v=JZE3nL_yfcc)
+
+
+- [Slides (2026)](https://docs.google.com/presentation/d/e/2PACX-1vTPlvP2c0RF06wQfT5sXU_mMCzg-zs3KYybpxaWzlgT0ug2c3L5Zo-pnZR0yU--N-ADEJ8IW7bmTkwV/pub?start=false&loop=false&delayms=3000)
+
+- [Code in Colab (2026)](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/04-trading-strategy-and-simulation/[2026]_Module_04_Colab_Trading_Simulations.ipynb)
+
+- **Home assignment (homework 4)** can be found in the [Cohorts](../cohorts/) folder (for the respective year). You will find the submission link and the deadlines there.
+
+---
 ## 2025
 - Youtube Recording of the livestream on July 15th 2025 
 
