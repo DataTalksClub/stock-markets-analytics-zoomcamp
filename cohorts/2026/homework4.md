@@ -26,9 +26,9 @@ Remove `ticker` and `month_wom` from the `CATEGORICAL` list *just* before you ge
 At the end of the notebook (after the bubble chart), check the CAGR for `pred10_rf_best_rule_55` (the best ML predictor has changed). Expected result: The new CAGR should be *slightly higher* than the original one, which was 1.1195.
  
 ---
-### Question 2: Best CAGR for Random Forest Decision Rule
+### Question 2: Most Efficient Random Forest Decision Rule
 
-**What is the probability threshold for the best Random Forest decision rule?**
+**What is the probability threshold for the second-best Random Forest decision rule, if you want to have the number of average trades per day BELOW 5?**
 
 
 #### **The Idea**
@@ -78,9 +78,9 @@ However, now you're optimizing not just for ML performance (like precision), but
 
 3. **Review the simulation results in `df_sim1_results`**
 
-   - Our current best rule, `pred10_rf_best_rule_55`, delivers a good CAGR but trades slightly **more than 5 times per day on average**. Add a new rule: look for a decision threshold where **avg. daily investments < 5**, so you want to beat `pred10_rf_best_rule_55` on **both** fronts — **fewer trades** and a **better (or at least comparable) CAGR**.
-   - Among the thresholds you've defined, identify the one that best satisfies this: fewer than 5 average daily investments, together with the best CAGR you can find at that trade-off.
-   - Write down the CAGR of this best model (it may end up higher or lower than the current best rule `pred10_rf_best_rule_55`).
+   - Our current best rule, `pred10_rf_best_rule_55`, delivers a good CAGR but trades slightly **more than 5 times per day on average**. Among the new thresholds you've defined, find the one where **avg. daily investments < 5**, while still achieving the best CAGR possible at that trade-off.
+   - It's likely that this rule won't beat `pred10_rf_best_rule_55` on CAGR — only on trade efficiency (fewer trades per day). That's fine: we'll call this the **second-best model**, since it's the best one specifically within the "fewer than 5 trades per day" subspace.
+   - Write down the decision rule threshold of this second-best model.
 
 
 ---
