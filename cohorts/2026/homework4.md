@@ -78,7 +78,7 @@ However, now you're optimizing not just for ML performance (like precision), but
 
 3. **Review the simulation results in `df_sim1_results`**
 
-   - Our current best rule, `pred10_rf_best_rule_55`, delivers a good CAGR but trades slightly **more than 5 times per day on average**. Among the new thresholds you've defined, find the one where **avg. daily investments < 5**, while still achieving the best CAGR possible at that trade-off.
+   - Our current best rule, `pred10_rf_best_rule_55`, delivers a good CAGR but trades slightly **more than 5 times per day on average**. Among the new thresholds you've defined, find the one where **avg. daily investments < 5**, while still achieving the best CAGR possible (close to 1.12) at that trade-off.
    - It's likely that this rule won't beat `pred10_rf_best_rule_55` on CAGR — only on trade efficiency (fewer trades per day). That's fine: we'll call this the **second-best model**, since it's the best one specifically within the "fewer than 5 trades per day" subspace.
    - Write down the decision rule threshold of this second-best model.
 
