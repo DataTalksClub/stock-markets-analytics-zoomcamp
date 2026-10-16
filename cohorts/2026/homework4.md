@@ -14,7 +14,7 @@ Please use the new workbook [[2026]_Module_04_Colab_Trading_Simulations.ipynb](h
 ---
 ### Question 1: Less Features is More 
 
-**Find the CAGR for the pred9_clf_second_best_rule_92	using the new setup (with fewer dummy variables).**
+**Find the CAGR for the pred10_rf_best_rule_55	using the new setup (with fewer dummy variables).**
 
 
 **The idea**: Reducing the number of features can help models perform better. As seen in the lecture, some models (e.g., Logistic Regression, Deep Neural Networks) may underperform due to too many features—especially the numerous dummy variables from exercises and individual stock tickers.
