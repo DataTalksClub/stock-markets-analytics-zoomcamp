@@ -92,6 +92,16 @@ Suggested set of things to include:
     * [ ] (1-2 points) Subjective bonus points from a peer reviewer: why do you like the project, what was particularly well done in the project?
 
 ## Project Submission
+### 2026
+### Attempt 1
+* [2026, Project submission attempt 1]
+Submission is open now until end of day 2026-11-20 (Fri, 23:59:59 GMT, Dublin time)
+https://courses.datatalks.club/sma-zoomcamp-2026/project/project1
+
+> Note: the project is intended to be completed within 2 weeks after Homework 5 is finished.
+
+---
+
 ### 2025
 ### Attempt 1
 * [2025, Project submission attempt 1]
