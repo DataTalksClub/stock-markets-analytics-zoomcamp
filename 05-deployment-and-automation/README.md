@@ -5,6 +5,8 @@
 
 [![[Stock Market Analytics Zoomcamp 2026] Module 5 "Advanced Trading Simulation and Automation"](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DuZ51CQumsAM)](https://www.youtube.com/watch?v=uZ51CQumsAM)
 
+- [View the Slides](https://docs.google.com/presentation/d/e/2PACX-1vRJsAQhhOgMuGPg5NUl4IQTNEwwmPx3hx2roRc8KLrt8CBhATH_O7VOBokL0oTGGVh6HzZnNjnbHEUG/pub?start=false&loop=false&delayms=3000)
+
 - [Code in Colab : \[2026\]_Module_05_Advanced_Strategies_And_Simulation.ipynb](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/05-deployment-and-automation/%5B2026%5D_Module_05_Advanced_Strategies_And_Simulation.ipynb)
   * Please make sure you clone the repo to a local machine and view via Jupyter Notebook
   * OR open the notebook from https://colab.research.google.com/
