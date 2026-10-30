@@ -190,9 +190,11 @@ class TrainModel:
 
     return
   
-  def train_random_forest(self, max_depth=17, n_estimators=200):
+  def train_random_forest(self, max_depth=13, n_estimators=100):
+    # 2026 Update: new top model is RandomForest (max_depth=13, n_estimators=100)
+    # with decision rule threshold=0.55 (see cohorts/2026/homework4.md, pred10_rf_best_rule_55)
     # https://scikit-learn.org/stable/modules/ensemble.html#random-forests-and-other-randomized-tree-ensembles
-    print('Training the best model (RandomForest (max_depth=17, n_estimators=200))')
+    print(f'Training the best model (RandomForest (max_depth={max_depth}, n_estimators={n_estimators}))')
     self.model = RandomForestClassifier(n_estimators = n_estimators,
                                  max_depth = max_depth,
                                  random_state = 42,
@@ -218,7 +220,7 @@ class TrainModel:
 
     self.model  = joblib.load(path)
 
-  def make_inference(self, pred_name:str):
+  def make_inference(self, pred_name:str, rule_threshold:float=0.55):
     # https://scikit-learn.org/stable/modules/ensemble.html#random-forests-and-other-randomized-tree-ensembles
     print('Making inference')
     
@@ -230,3 +232,6 @@ class TrainModel:
     
     # define rank of the prediction
     self.df_full[f"{pred_name}_rank"] = self.df_full.groupby("Date")[pred_name].rank(method="first", ascending=False)
+
+    # 2026 Update: apply decision rule threshold=0.55 (best rule found: pred10_rf_best_rule_55)
+    self.df_full[f"{pred_name}_rule_{int(rule_threshold*100)}"] = (y_pred_all_class1_array >= rule_threshold).astype(int)

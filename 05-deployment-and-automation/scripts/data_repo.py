@@ -10,27 +10,35 @@ import time
 import os
 import pandas_datareader as pdr
 
-# https://companiesmarketcap.com/usa/largest-companies-in-the-usa-by-market-cap/
+# https://companiesmarketcap.com/eur/usa/largest-companies-in-the-usa-by-market-cap/?download=csv
 
-# 2025 Update: top-190 US stocks with >$50b market cap
+# 2026 Update: top-190 US stocks with >$50b market cap (refreshed from companiesmarketcap.com CSV export)
+# Fixes stale/renamed tickers from the 2025 list:
+#   SNYS -> SNPS (Synopsys, was a typo)
+#   MMC  -> MRSH (Marsh & McLennan renamed its ticker)
+#   FI   -> FISV (Fiserv's correct ticker)
+#   BK   -> BNY  (Bank of New York Mellon renamed its ticker)
+# (SpaceX/SPCX excluded: privately held, not tradable via yfinance)
 US_STOCKS = [
-    "AAPL", "MSFT", "NVDA", "GOOG", "AMZN", "META", "BRK-B", "LLY", "AVGO", "TSLA",
-    "JPM", "WMT", "UNH", "V", "XOM", "MA", "PG", "JNJ", "COST", "ORCL", "HD", "ABBV",
-    "BAC", "KO", "MRK", "NFLX", "CVX", "ADBE", "PEP", "CRM", "TMUS", "TMO", "AMD",
-    "MCD", "CSCO", "WFC", "ABT", "PM", "DHR", "IBM", "TXN", "QCOM", "AXP", "VZ",
-    "GE", "AMGN", "INTU", "NOW", "ISRG", "NEE", "CAT", "DIS", "RTX", "MS", "PFE",
-    "SPGI", "UNP", "GS", "CMCSA", "AMAT", "UBER", "PGR", "T", "LOW", "SYK", "LMT",
-    "HON", "TJX", "BLK", "ELV", "REGN", "BKNG", "COP", "VRTX", "NKE", "BSX", "PLD",
-    "SCHW", "C", "PANW", "MMC", "ADP", "KKR", "UPS", "ADI", "AMT", "SBUX", "DE",
-    "ANET", "BMY", "HCA", "CI", "KLAC", "FI", "LRCX", "BX", "GILD", "MU", "BA", "SO",
-    "MDLZ", "ICE", "MO", "SHW", "DUK", "MCO", "CL", "INTC", "WM", "ZTS", "GD", "CTAS",
-    "EQIX", "DELL", "NOC", "CME", "SCCO", "TDG", "SNYS", "APH", "WELL", "MCK", "PH",
-    "PYPL", "ITW", "MSI", "PNC", "ABNB", "CMG", "USB", "CVS", "MMM", "FDX", "EOG",
-    "ECL", "BDX", "CDNS", "TGT", "WDAY", "PLTR", "CSX", "ORLY", "CRWD", "MAR", "RSG",
-    "AJG", "APO", "CARR", "EPD", "SPG", "APD", "AFL", "MRVL", "PSA", "DHI", "NEM",
-    "FCX", "ROP", "SLB", "TFC", "FTNT", "EMR", "MPC", "NSC", "CEG", "PSX", "ADSK",
-    "COF", "WMB", "ET", "IBKR", "GM", "MET", "O", "AEP", "OKE", "AZO", "HLT", "GEV",
-    "SRE", "PCG", "DASH", "TRV", "CPRT", "OXY", "ROST", "KDP", "ALL", "BK", "DLR"
+    "NVDA", "AAPL", "MSFT", "GOOG", "AMZN", "AVGO", "META", "TSLA", "LLY", "BRK-B",
+    "MU", "WMT", "AMD", "JPM", "V", "XOM", "JNJ", "MA", "ABBV", "INTC",
+    "PLTR", "CVX", "COST", "CSCO", "ORCL", "KO", "PG", "UNH", "MRK", "BAC",
+    "AMAT", "HD", "PM", "GE", "LRCX", "PANW", "DELL", "CAT", "MS", "TXN",
+    "GS", "RTX", "CRWD", "TMO", "NFLX", "WFC", "AMGN", "IBM", "GEV", "ANET",
+    "KLAC", "AXP", "ADI", "C", "GILD", "APH", "QCOM", "MRVL", "SNDK", "DIS",
+    "BLK", "CRM", "PEP", "ABT", "MCD", "VZ", "COP", "UNP", "DE", "NEE",
+    "WELL", "PFE", "DHR", "SCCO", "ISRG", "TMUS", "TJX", "SCHW", "LMT", "WDC",
+    "BX", "T", "IBKR", "BA", "VRTX", "UBER", "SPGI", "PGR", "MO", "COF",
+    "MPC", "BMY", "PLD", "SBUX", "SYK", "PH", "BKNG", "SNOW", "LOW", "NEM",
+    "CVS", "MCK", "NOW", "ADP", "GLW", "NET", "VLO", "SO", "PSX", "CME",
+    "HCA", "MAR", "EQIX", "FTNT", "BNY", "GD", "ABNB", "DUK", "CSX", "ADBE",
+    "EMR", "PWR", "DDOG", "FCX", "VRT", "USB", "CDNS", "SNPS", "CEG", "MRSH",
+    "PNC", "WM", "WMB", "ICE", "ELV", "MMM", "UPS", "MNST", "MRNA", "INTU",
+    "KKR", "CTAS", "EOG", "AMT", "APP", "ECL", "EPD", "REGN", "MCO", "LITE",
+    "RCL", "HOOD", "HWM", "SPG", "TRV", "MSI", "MDLZ", "ITW", "NOC", "SHW",
+    "SLB", "HLT", "CMCSA", "CI", "HPE", "WBD", "DASH", "NSC", "CVNA", "KMI",
+    "CL", "URI", "ROST", "FDX", "GM", "RSG", "ET", "CMI", "ORLY", "AEP",
+    "HON", "APO", "APD", "DLR", "TGT", "AJG", "TRGP", "LNG", "TDG", "BE"
 ]
 
 # https://companiesmarketcap.com/european-union/largest-companies-in-the-eu-by-market-cap/

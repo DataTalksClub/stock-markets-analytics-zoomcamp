@@ -100,9 +100,13 @@ def main():
   # =========================================
   print('Step 4: Making inference')
 
+  # 2026 Update: new top model is RandomForest (max_depth=13, n_estimators=100)
+  # with decision rule threshold=0.55 (pred10_rf_best_rule_55, see cohorts/2026/homework4.md)
   prediction_name='pred_rf_30d_best'
-  trained.make_inference(pred_name=prediction_name)
-  COLUMNS = ['Close','Ticker','Date',prediction_name, prediction_name+'_rank']
+  rule_threshold = 0.55
+  trained.make_inference(pred_name=prediction_name, rule_threshold=rule_threshold)
+  rule_col = f"{prediction_name}_rule_{int(rule_threshold*100)}"
+  COLUMNS = ['Close','Ticker','Date',prediction_name, prediction_name+'_rank', rule_col]
   
   print('Results of the 30-day prediction estimation (last 10 days):')
   # Set display options to prevent truncation
